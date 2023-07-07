@@ -413,7 +413,7 @@ svg #cap {
 /************************ 6. Header ***********************/
 .header {
 	padding: 28px 0;
-	width: 85%;
+	width: 100%;
 	background-color: #ffffff;
 	position: absolute;
 	z-index: 999;
@@ -451,7 +451,7 @@ svg #cap {
 }
 .tr-nav-item .nav-link {
 	padding: 0!important;
-	margin: 0 21px;
+	margin: 0 25px;
 	color: #999999;
 	font-weight: 600;
 	font-size: 18px;
@@ -511,7 +511,7 @@ svg #cap {
 .header-input
 {
 	display: inline;
-     width: 250px;
+     width: 300px;
     border-top: none;
     border-right: none;
     border-left: none;
@@ -525,8 +525,8 @@ svg #cap {
     background: rgb(255 255 255);
     color: #000;
     position: absolute;
-    right: 0;
-    top: 100%;
+    right: -200%;
+    top: 250%;
    	-webkit-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
    	-moz-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
    	-ms-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
