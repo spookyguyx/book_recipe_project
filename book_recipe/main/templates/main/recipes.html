@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .body{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+        }
+
+
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 100px;
+            width: 90vw;
+            height: 80vh;
+            background: grey;
+            margin: 0 auto;
+        }
+
+        .item {
+            display: grid;
+            border: 1px solid black;
+            background: white;
+            margin: 0 auto;
+            margin-top: 100px;
+            width: 250px;
+            height: 300px;
+            grid-template-rows: 130px 1fr;
+        }
+
+        .image{
+            display: grid;
+
+            border: 1px solid black;
+
+
+        }
+        .text{
+            display: grid;
+
+            border: 1px solid black;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="item item1">
+            <div class="image">img</div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, architecto, asperiores atque culpa dolore eligendi error impedit laborum laudantium nobis repellendus reprehenderit suscipit tempora unde voluptate. Consequatur explicabo magni perferendis.</div>
+        </div>
+
+        <div class="item item2">
+            <div class="image">img</div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, architecto, asperiores atque culpa dolore eligendi error impedit laborum laudantium nobis repellendus reprehenderit suscipit tempora unde voluptate. Consequatur explicabo magni perferendis.</div>
+        </div>
+
+        <div class="item item3">
+            <div class="image">img</div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, architecto, asperiores atque culpa dolore eligendi error impedit laborum laudantium nobis repellendus reprehenderit suscipit tempora unde voluptate. Consequatur explicabo magni perferendis.</div>
+        </div>
+
+    </div>
+</body>
+</html>
