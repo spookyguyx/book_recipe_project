@@ -454,7 +454,7 @@ svg #cap {
 	margin: 0 25px;
 	color: #999999;
 	font-weight: 600;
-	font-size: 18px;
+	font-size: 17px;
 	position: relative;
 }
 .tr-nav-item .nav-link:after {
@@ -525,7 +525,7 @@ svg #cap {
     background: rgb(255 255 255);
     color: #000;
     position: absolute;
-    right: -200%;
+    right: -650%;
     top: 250%;
    	-webkit-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
    	-moz-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
