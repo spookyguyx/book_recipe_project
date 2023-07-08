@@ -9,3 +9,7 @@ def about(request):
 
 def recipes(request):
     return render(request, 'main/recipes.html')
+
+def lanch(request):
+    return render(request, 'main/lanch.html')
+
