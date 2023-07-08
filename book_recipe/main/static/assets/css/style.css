@@ -1222,11 +1222,9 @@ svg #cap {
 }
 /*********************** 15. Footer ********************/
 .footer-bottom{
-    background-image: url(../images/footer-images/footer-back.png);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    padding: 100px 0 43px;
 }
 .footer-bottom:before {
     content: "";
@@ -1266,7 +1264,7 @@ svg #cap {
 	color:#34bf49;
 }
 .footer-logo {
-    padding: 109px 0;
+    padding: 60px 0;
 }
 .footer-copylink{
 	padding-top: 40px;
