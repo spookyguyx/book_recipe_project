@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Добавление рецептов</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/media-query.css' %}">
+    <link rel="stylesheet" href="{%static 'css/lanch.css' %}">
+    <link rel="stylesheet" href="{%static 'css/recipes_launch.css' %}">
+</head>
+<body>
+
+
+    <div id="wrap">
+
+        <!-- start slider section -->
+        <section class="home-slider">
+            <h1 class="create_recipes">Добавление рецептов</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-11 col-md-6 col-lg-9 col-xl-10">
+                       <div class="recipes_launch">
+                            <form enctype="multipart/form-data" method="post">
+                                {% csrf_token %}
+                                {{ form.title }}<br>
+                                {{ form.ingredients }}<br>
+                                {{ form.steps }}<br>
+                                <h6>Ккал</h6>{{form.calories}}<br>
+                                <p>Выбрать фотографию блюда</p>
+                                <p><input type="file" name="photo" multiple accept="image/*,image/jpeg">
+                                <button class="btn btn-succes" type="submit">Добавить рецепт</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- END slider section -->
+
+
+    </div>
+
+
+
+
+
+
+</body>
+</html>
