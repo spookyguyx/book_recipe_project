@@ -546,7 +546,7 @@ svg #cap {
     /*background-image: url(../images/background-shape/bg-shape1.png);*/
     background-size: cover;
     background-repeat: no-repeat;
-  	padding: 100px 0 40px 0;
+    padding: 0px 0 40px 0;
     position: relative; 
 }
 /*.slider-obutton ,.slider-pbutton ,.play-button ,.slider-pbutton p{
