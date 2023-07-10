@@ -15,7 +15,7 @@ def breakfast(request):
 
 
 def lunch(request):
-    return render(request, 'main/lunch.html')
+    return render(request, 'main/Lunch.html')
 
 
 def recipes_launch(request):
@@ -42,5 +42,9 @@ def dessert(request):
     return render(request, 'main/dessert.html')
 
 
-def favourite(request):
-    return render(request, 'main/favorite.html')
+def drink(request):
+    return render(request, 'main/drink.html')
+
+
+def favorites(request):
+    return render(request, 'main/favorites.html')
