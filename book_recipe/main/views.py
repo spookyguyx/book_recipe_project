@@ -10,7 +10,7 @@ def recipes(request):
     return render(request, 'main/recipes.html')
 
 
-def breackfast(request):
+def breakfast(request):
     return render(request, 'main/breakfast.html')
 
 
@@ -34,13 +34,13 @@ def signin(request):
     return render(request, 'main/signIn.html')
 
 
-#def dinner(request):
-#    return render(request, 'main/dinner.html')
+def dinner(request):
+    return render(request, 'main/dinner.html')
 
 
-#def desert(request):
-#    return render(request, 'main/desert.html')
+def dessert(request):
+    return render(request, 'main/dessert.html')
 
 
-#def favourite(request):
-#    return render(request, 'main/favourite.html')
+def favourite(request):
+    return render(request, 'main/favorite.html')
