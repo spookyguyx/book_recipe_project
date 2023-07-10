@@ -116,7 +116,7 @@
 	}
 	.slider-content p{
 		width: 60%;
-	}	
+	}
 	.slider-pbutton {
     	padding-left: 80px;
 	}
@@ -308,7 +308,7 @@
 	.tr-nav-item .nav-link {
 		margin: 16px 0;
 		font-size: 24px;
-		color: #ffffff!important; 
+		color: #ffffff!important;
 	}
 	.tr-nav-item .nav-link:after {
 		content: none;
@@ -416,7 +416,7 @@
     	line-height: 55px;
     	width:auto;
 	}
-	
+
 	.our-item h3{
 		width: 300px;
 	    height: auto;
@@ -551,12 +551,12 @@
 	.preview_image .preview_img-box{
 		margin-bottom: 20px;
 	}
-	
+
 	.version
 	{
 		margin-bottom: 30px;
 	}
-	
+
 	.preview_logo {
     	padding-bottom: 30px;
 	}
@@ -891,7 +891,7 @@
 	    padding-top: 16%;
 	}
 	.fullscreen-menu-list{
-		padding: 100px 30px;	
+		padding: 100px 30px;
 	}
 	.cs-counter ul li h2{
 		font-size: 26px;
@@ -955,6 +955,6 @@
 	.specialities-top h2 {
 	    font-size: 30px;
 	    line-height: 40px;
-		
+
 	}
 }

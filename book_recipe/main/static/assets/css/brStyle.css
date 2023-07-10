@@ -80,11 +80,11 @@ h1 {
 	line-height: 70px;
 	font-weight: 700;
 }
-h2 {
+/*h2 {
 	font-size: 48px;
 	line-height: 60px;;
 	color: #34bf49;
-}
+}*/
 h3 {
 	color: #000000;
 	font-size: 30px;
@@ -119,14 +119,14 @@ a {
 	font-family: 'Josefin Sans', sans-serif;
 	outline: none;
 }
-img {
+/*img {
 	-webkit-transition: 0.4s ease-in-out;
 	-moz-transition: 0.4s ease-in-out;
 	-ms-transition: 0.4s ease-in-out;
 	-o-transition: 0.4s ease-in-out;
 	transition: 0.4s ease-in-out;
 	display: inline-block !important;
-}
+}*/
 ul {
 	margin-bottom: 0px;
 }
@@ -454,7 +454,7 @@ svg #cap {
 	margin: 0 30px;
 	color: #999999;
 	font-weight: 600;
-	font-size: 17px;
+	font-size: 18px;
 	position: relative;
 }
 .tr-nav-item .nav-link:after {
@@ -511,7 +511,7 @@ svg #cap {
 .header-input
 {
 	display: inline;
-     width: 300px;
+     width: 250px;
     border-top: none;
     border-right: none;
     border-left: none;
@@ -525,8 +525,8 @@ svg #cap {
     background: rgb(255 255 255);
     color: #000;
     position: absolute;
-    right: -650%;
-    top: 250%;
+    right: 0;
+    top: 100%;
    	-webkit-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
    	-moz-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
    	-ms-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
@@ -544,13 +544,13 @@ svg #cap {
 
 /************************ 7. slider content ***********************/
 .home-slider {
-    background-image: url(../images/background-shape/bg-shape1.png);
+    /*background-image: url(../images/background-shape/bg-shape1.png);*/
     background-size: cover;
     background-repeat: no-repeat;
-  	padding: 400px 0 160px 0;
+  	padding: 100px 0 40px 0;
     position: relative; 
 }
-.slider-obutton ,.slider-pbutton ,.play-button ,.slider-pbutton p{
+/*.slider-obutton ,.slider-pbutton ,.play-button ,.slider-pbutton p{
     display: inline-block;;
 }
 .slider-obutton .btn
@@ -567,13 +567,14 @@ svg #cap {
 	font-family: "Josefin Sans";
 	margin-bottom: 16px;
     display: inline-block;
-}
+}*/
 .slider-content h1
 {
+    text-align: center;
 	color: #464952;
 	font-weight: 700;
 	font-family: "Josefin Sans";
-	font-size: 60px;
+	font-size: 36px;
 	line-height: 70px;
 }
 .slider-content p
@@ -585,7 +586,7 @@ svg #cap {
 	font-weight: 400;
 	font-family: "Josefin Sans";
 }
-.slider-video-section
+/*.slider-video-section
 {
 	margin-top: 125px;
 }
@@ -649,9 +650,9 @@ svg #cap {
 .modal-content button:focus
 {
 	outline: none;
-}
+}*/
 
-.home-slider-image
+/*.home-slider-image
 {
 	position: absolute;
     right: 2%;
@@ -667,8 +668,48 @@ svg #cap {
     border-radius: 100%;
 }
 
+/*****************************Recepts**************************************/
+.recept-card{
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+	transition: all .3s;
+}
+
+.recept-card:hover{
+	box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
+}
+.recept-image a{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 250px;
+	padding: 20px;
+}
+.recept-image img{
+	max-width: 100%;
+	max-height: 100%;
+}
+.recept-name h4 a{
+    color: black;
+	font-weight: 500px;
+	display: block;
+	height: 60px;
+	overflow: hidden;
+	text-decoration: none;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-inline: 20px;
+}
+.recept-bottom-like a{
+    color: black;
+	margin-right: 20px;
+}
+.recept-bottom-like p{
+	padding-left: 20px;
+}
+
 /************************ 8. Heading-title ***********************/
-.specialities-top h2 {
+/*.specialities-top h2 {
 	font-size: 48px;
 	line-height: 70px;
 	color: #34bf49;
@@ -686,10 +727,10 @@ svg #cap {
     text-align: center;
     margin: 0 auto;
     padding: 30px 0 100px;
-}
+}*/
 
 /*********************** 9. specialities ********************/
-.specialities {
+/*.specialities {
     background-image: url(../images/background-shape/bg-shape2.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -791,7 +832,7 @@ svg #cap {
 }
 /*********************** 10. Our_items ********************/
 
-.our-item-section {
+/*.our-item-section {
     margin-top: -265px;
     padding-bottom: 130px;
 }
@@ -931,11 +972,11 @@ svg #cap {
     background-color: rgba(52,191,73,0.8);
     position: absolute;
     bottom: 0;
-}
+}*/
 
 /*********************** 11. testimonials ********************/
 
-.testimonials
+/*.testimonials
 {
 	background-image: url(../images/background-shape/bg-shape3.png);
     background-repeat: no-repeat;
@@ -1086,10 +1127,10 @@ svg #cap {
 	color: #9a9a9a;
 	font-weight: 400;
 	font-family: "Josefin Sans";
-}
+}*/
 /*********************** 12. chef section ********************/
 
-.chef-section{
+/*.chef-section{
 	background-image: url(../images/background-shape/bg-shape4.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -1172,9 +1213,9 @@ svg #cap {
 }
 .chef-slider-inner{
   	overflow: hidden;
-}
+}*/
 /*********************** 13. email-subscription ********************/
-.email-subscription{
+/*.email-subscription{
  	background-image: url(../images/background-shape/bg-shape5.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -1221,9 +1262,9 @@ svg #cap {
 }
 .email-form .email-form-button:hover{
 	color: #212529;
-}
+}*/
 /*********************** 14. Download App ********************/
-.download-app-section{
+/*.download-app-section{
  	background-image: url(../images/background-shape/bg-shape6.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -1233,12 +1274,14 @@ svg #cap {
 .download-app-section .btn{
     font-size: 18px;
     padding: 14px 40px;
-}
+}*/
 /*********************** 15. Footer ********************/
 .footer-bottom{
+    background-image: url(../images/footer-images/footer-back.png);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    padding: 100px 0 43px;
 }
 .footer-bottom:before {
     content: "";
@@ -1278,7 +1321,7 @@ svg #cap {
 	color:#34bf49;
 }
 .footer-logo {
-    padding: 60px 0;
+    padding: 109px 0;
 }
 .footer-copylink{
 	padding-top: 40px;
