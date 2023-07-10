@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx" dir="ltr">
+{% block head %}
 <head>
     {% load static %}
     <meta charset="utf-8">
@@ -16,12 +17,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/media-query.css' %}">
     <link rel="stylesheet" href="{%static 'css/lanch.css' %}">
 </head>
+{% endblock %}
 
 <body data-spy="scroll" data-target="#myHeader">
 
 <!-- Preloader -->
 <div class="preloader">
-    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35.235 35.235" xml:space="preserve">
+    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmln s:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35.235 35.235" xml:space="preserve">
         <g>
             <g id="b103_soup">
                 <path id="cap" d="M26.776,12.687H19.25c0.68,0,1.233-0.553,1.233-1.234s-0.554-1.23-1.233-1.23h-3.078c-0.68,0-1.232,0.549-1.232,1.23

@@ -42,5 +42,5 @@ def dessert(request):
     return render(request, 'main/dessert.html')
 
 
-def favourite(request):
+def favorite(request):
     return render(request, 'main/favorite.html')
