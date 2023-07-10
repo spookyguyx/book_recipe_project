@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/media-query.css' %}">
+    <link rel="stylesheet" href="{%static 'css/lanch.css' %}">
 </head>
 
 <body data-spy="scroll" data-target="#myHeader">
@@ -71,7 +72,7 @@
                     <nav class="navbar navbar-expand-lg nabar-own p-0">
                         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
+                                aria-expanded="false" aria-label="Toggle navigation"> 
                             <span class="navbar-toggler-icon">
                             <span class="menu_line_1"></span>
                             <span class="menu_line_2"></span>
@@ -79,24 +80,14 @@
                             </span>
                         </button>
                         <div class="collapse navbar-collapse tr-nabar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mr-auto align-self-center" style="margin-left: 0px;">
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="Завтраки">Завтраки</a>
+                            <ul class="navbar-nav mr-auto align-self-center">
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="recipes">Recipes</a>
                                 </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="Обеды">Обеды</a>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="#Packages">Packages</a>
                                 </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="Ужины">Ужины</a>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="#About">About</a>
                                 </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="Десерты">Десерты</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="Напитки">Напитки</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="Избранное">Избранное</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="Войти">Войти</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="Регистрация">Регистрация</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="Добавить">Добавить</a>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="#Contact">Contact</a>
                                 </li>
                             </ul>
                         <div class="header-search"><input type="text" class="form-control header-input" placeholder="Поиск" ><span class="search-icon"><i class="fas fa-search"></i></span><span class='close-icon'><i class='fas fa-times'></i></span></div></div>
@@ -109,15 +100,15 @@
     <!-- start slider section -->
     <section class="home-slider">
         <div class="home-slider-image  wow fadeInRight col-xl-5 col-lg-6 col-md-6 col-12 p-0" data-wow-duration="2s" data-wow-delay=".4s">
-            <img src="{% static 'assets/images/silders/dish.png' %}" class="img-fluid" alt="tasty and healthy food made" data-wow-delay="1s"> 
+            <img src="{% static 'assets/images/silders/pizza.png' %}" class="img-fluid" alt="tasty and healthy food made" data-wow-delay="1s">
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-11 col-md-6 col-lg-9 col-xl-10">
                     <div class="slider-content">
-                        <span class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">Tasty & Healthy</span>
-                        <h1 class="wow fadeInDown" data-wow-duration="1.5s" data-wow-delay=".4s">Food Made With Love!</h1>
-                        <p class="mb-0 wow fadeInDown"  data-wow-duration="2s" data-wow-delay=".5s">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <span class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">Вкусно и полезно</span>
+                        <h1 class="wow fadeInDown" data-wow-duration="1.5s" data-wow-delay=".4s">Простые рецепты блюд </h1>
+                        <p class="mb-0 wow fadeInDown"  data-wow-duration="2s" data-wow-delay=".5s">На нашем сайте кулинарных рецептов мы постарались собрать большинство простых рецептов самых вкусных, доступных, популярных и изысканных блюд. Подробное пошаговое описание технологии приготовления поможет Вам, не только быстро и без особых проблем приготовить понравившееся Вам блюдо, но и легко освоить азы кулинарии. К каждому рецепту есть дополнения и рекомендации по приготовлению и украшению готового блюда. Будем рады видеть Ваши дополнения и варианты приготовления в отзывах.</p>
                     </div>
 <!--                    <div class="slider-video-section wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".4s">-->
 <!--                        <div class="slider-obutton">-->
@@ -144,16 +135,186 @@
         <div class="shape-image-one">
             <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="the background decorated dotted square image">
         </div>
-<!--        <div class="container">-->
-<!--            <div class="row specialities-top">-->
-<!--                <div class="col-12 col-md-12 col-lg-12">-->
-<!--                    <div class="wow fadeInDown" data-wow-duration="2s" data-wow-delay=".4s">-->
-<!--                        <h2 class="mb-0">Our Specialities</h2>-->
-<!--                    </div>-->
-<!--                     <p class="wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit.</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="row specialities-section">-->
+        <div class="container">
+            <div class="row specialities-top">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <div class="wow fadeInDown" data-wow-duration="2s" data-wow-delay=".4s">
+                        <h2 class="mb-0">Популярные рецепты</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row specialities-section">
+                <section class="recept-card">
+                    <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3 col-sm-6 mb-3">
+                                    <div class="recept-card">
+                                        <div class="recept-image">
+                                            <a href="#"><img src="http://dummyimage.com/250" alt=""></a>
+                                        </div>
+                                        <div class="recept-name">
+                                            <h4><a href="#">Название рецепта</a></h4>
+                                        </div>
+                                        <div class="recept-bottom-like d-flex justify-content-between">
+                                            <div>
+                                                <p>Калорийность: 300 ккал</p>
+                                            </div>
+                                            <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                  <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                </svg></a></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-3 col-sm-6 mb-3">
+                                    <div class="recept-card">
+                                        <div class="recept-image">
+                                            <a href="#"><img src="http://dummyimage.com/250" alt=""></a>
+                                        </div>
+                                        <div class="recept-name">
+                                            <h4><a href="#">Название рецепта</a></h4>
+                                        </div>
+                                        <div class="recept-bottom-like d-flex justify-content-between">
+                                            <div>
+                                                <p>Калорийность: 300 ккал</p>
+                                            </div>
+                                            <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                  <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                </svg></a></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-3 col-sm-6 mb-3">
+                                    <div class="recept-card">
+                                        <div class="recept-image">
+                                            <a href="#"><img src="http://dummyimage.com/250" alt=""></a>
+                                        </div>
+                                        <div class="recept-name">
+                                            <h4><a href="#">Название рецепта</a></h4>
+                                        </div>
+                                        <div class="recept-bottom-like d-flex justify-content-between">
+                                            <div>
+                                                <p>Калорийность: 300 ккал</p>
+                                            </div>
+                                            <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                  <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                </svg></a></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-3 col-sm-6 mb-3">
+                                    <div class="recept-card">
+                                        <div class="recept-image">
+                                            <a href="#"><img src="http://dummyimage.com/250" alt=""></a>
+                                        </div>
+                                        <div class="recept-name">
+                                            <h4><a href="#">Название рецепта</a></h4>
+                                        </div>
+                                        <div class="recept-bottom-like d-flex justify-content-between">
+                                            <div>
+                                                <p>Калорийность: 300 ккал</p>
+                                            </div>
+                                            <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                  <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                </svg></a></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-3 col-sm-6 mb-3">
+                                    <div class="recept-card">
+                                        <div class="recept-image">
+                                            <a href="#"><img src="http://dummyimage.com/250" alt=""></a>
+                                        </div>
+                                        <div class="recept-name">
+                                            <h4><a href="#">Название рецепта</a></h4>
+                                        </div>
+                                        <div class="recept-bottom-like d-flex justify-content-between">
+                                            <div>
+                                                <p>Калорийность: 300 ккал</p>
+                                            </div>
+                                            <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                  <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                </svg></a></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="recept-card">
+                                        <div class="recept-image">
+                                            <a href="#"><img src="http://dummyimage.com/250" alt=""></a>
+                                        </div>
+                                        <div class="recept-name">
+                                            <h4><a href="#">Название рецепта</a></h4>
+                                        </div>
+                                        <div class="recept-bottom-like d-flex justify-content-between">
+                                            <div>
+                                                <p>Калорийность: 300 ккал</p>
+                                            </div>
+                                            <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                  <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                </svg></a></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-3 col-sm-6 mb-3">
+                                    <div class="recept-card">
+                                        <div class="recept-image">
+                                            <a href="#"><img src="http://dummyimage.com/250" alt=""></a>
+                                        </div>
+                                        <div class="recept-name">
+                                            <h4><a href="#">Название рецепта</a></h4>
+                                        </div>
+                                        <div class="recept-bottom-like d-flex justify-content-between">
+                                            <div>
+                                                <p>Калорийность: 300 ккал</p>
+                                            </div>
+                                            <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                  <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                </svg></a></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-3 col-sm-6 mb-3">
+                                    <div class="recept-card">
+                                        <div class="recept-image">
+                                            <a href="#"><img src="http://dummyimage.com/250" alt=""></a>
+                                        </div>
+                                        <div class="recept-name">
+                                            <h4><a href="#">Название рецепта</a></h4>
+                                        </div>
+                                        <div class="recept-bottom-like d-flex justify-content-between">
+                                            <div>
+                                                <p>Калорийность: 300 ккал</p>
+                                            </div>
+                                            <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                  <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                </svg></a></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+    <section>
+
+    </section>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </section>
 <!--                <div class="col-12 col-md-6 col-lg-5">-->
 <!--                    <div class="specialities-image wow fadeInLeft" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                        <img src="{% static 'assets/images/specialities/specialities1.png' %}" alt="find your best healthy food" >-->
@@ -168,12 +329,12 @@
 <!--                    <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                        Slightly believable here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in top some form, by injected humour, or randomised words which is to don't look even.</p>-->
 <!--                </div>-->
-<!--            </div>-->
+            </div>
 <!--            <div class="row specialities-section">-->
 <!--                <div class="col-12 col-md-6 col-lg-6 p-lg-0 specialities-column specialities-middle">-->
 <!--                    <div class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                        <h3 class="mb-0"> The most attractive dishes<br>-->
-<!--                            for you</h3>                           -->
+<!--                            for you</h3>-->
 <!--                    </div>-->
 <!--                    <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                        Slightly believable here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in top some form, by injected humour, or randomised words which is to don't look even.</p>-->
@@ -195,13 +356,13 @@
 <!--                <div class="col-12 col-md-6 col-lg-6 p-lg-0 specialities-column">-->
 <!--                    <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                        <h3 class="mb-0"> Super fast home delivery<br>-->
-<!--                            service</h3>                        -->
+<!--                            service</h3>-->
 <!--                    </div>-->
 <!--                    <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                        Slightly believable here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in top some form, by injected humour, or randomised words which is to don't look even.</p>-->
 <!--                </div>-->
-<!--            </div>  -->
-<!--        </div>-->
+<!--            </div>-->
+        </div>
     </section>
     <!-- END specialities section -->
 
@@ -244,12 +405,12 @@
 <!--                <div class="col-12 col-md-8 col-lg-8 p-lg-0">-->
 <!--                    <div class="tab-content " id="tabs">-->
 <!--                        <div class="tab-pane active" id="Breakfast">-->
-<!--                            <div class="our-item-slider breakfast-slider">                                -->
+<!--                            <div class="our-item-slider breakfast-slider">-->
 <!--                                 <div class="our-item">-->
 <!--                                    <div class="our-item-inner">-->
 <!--                                        <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <h3 class="mb-0"> Bread buuter with zam<br>-->
-<!--                                                        and milk shake</h3>    -->
+<!--                                                        and milk shake</h3>-->
 <!--                                        </div>-->
 <!--                                        <div class="item_order">-->
 <!--                                            <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
@@ -257,7 +418,7 @@
 <!--                                            <div class="our-item-button wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                                    <button class="btn">Order Now</button>-->
 <!--                                            </div>-->
-<!--                                        </div>   -->
+<!--                                        </div>-->
 <!--                                        <div class="our-item-image wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <img src="{% static 'assets/images/our-item/breakfast/breakfast-2.png' %}" alt="pasta ieth tomato and chiken source" >-->
 <!--                                            <div class="item-price">$20</div>-->
@@ -268,7 +429,7 @@
 <!--                                    <div class="our-item-inner">-->
 <!--                                        <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <h3 class="mb-0"> Milk in the fruite and zam <br>-->
-<!--                                                        Tomato Paniyaram</h3>    -->
+<!--                                                        Tomato Paniyaram</h3>-->
 <!--                                        </div>-->
 <!--                                        <div class="item_order">-->
 <!--                                            <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
@@ -276,22 +437,22 @@
 <!--                                            <div class="our-item-button wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                                    <button class="btn">Order Now</button>-->
 <!--                                            </div>-->
-<!--                                        </div>   -->
+<!--                                        </div>-->
 <!--                                        <div class="our-item-image wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <img src="{% static 'assets/images/our-item/breakfast/breakfast-1.png' %}" alt="pasta ieth tomato and chiken source" >-->
 <!--                                            <div class="item-price">$20</div>-->
 <!--                                        </div>-->
 <!--                                    </div>-->
-<!--                                 </div>                                    -->
+<!--                                 </div>-->
 <!--                            </div>-->
-<!--                        </div> -->
+<!--                        </div>-->
 <!--                        <div class="tab-pane" id="Launch">-->
 <!--                            <div class="our-item-slider launch-slider">-->
 <!--                                <div class="our-item">-->
 <!--                                    <div class="our-item-inner">-->
 <!--                                        <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <h3 class="mb-0">South Indian Chicken <br>-->
-<!--                                                        and anjir dishes</h3>    -->
+<!--                                                        and anjir dishes</h3>-->
 <!--                                        </div>-->
 <!--                                        <div class="item_order">-->
 <!--                                            <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
@@ -299,7 +460,7 @@
 <!--                                            <div class="our-item-button wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                                    <button class="btn">Order Now</button>-->
 <!--                                            </div>-->
-<!--                                        </div>   -->
+<!--                                        </div>-->
 <!--                                        <div class="our-item-image wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <img src="{% static 'assets/images/our-item/launch/launch-1.png' %}" alt="pasta ieth tomato and chiken source" >-->
 <!--                                            <div class="item-price">$20</div>-->
@@ -310,7 +471,7 @@
 <!--                                    <div class="our-item-inner">-->
 <!--                                        <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <h3 class="mb-0">Schezuan Pepper Spiced South<br>-->
-<!--                                                        and Indian 'sundal'</h3>    -->
+<!--                                                        and Indian 'sundal'</h3>-->
 <!--                                        </div>-->
 <!--                                        <div class="item_order">-->
 <!--                                            <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
@@ -318,13 +479,13 @@
 <!--                                            <div class="our-item-button wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                                    <button class="btn">Order Now</button>-->
 <!--                                            </div>-->
-<!--                                        </div>   -->
+<!--                                        </div>-->
 <!--                                        <div class="our-item-image wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <img src="{% static 'assets/images/our-item/launch/launch-2.png' %}" alt="pasta ieth tomato and chiken source" >-->
 <!--                                            <div class="item-price">$20</div>-->
 <!--                                        </div>-->
 <!--                                    </div>-->
-<!--                                 </div>                                    -->
+<!--                                 </div>-->
 <!--                            </div>-->
 <!--                        </div>-->
 <!--                        <div class="tab-pane" id="Dinner">-->
@@ -333,7 +494,7 @@
 <!--                                    <div class="our-item-inner">-->
 <!--                                        <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <h3 class="mb-0"> Pasta in the shape of hearts with chicken<br>-->
-<!--                                                        Guilt-Free Galouti Kebab</h3>    -->
+<!--                                                        Guilt-Free Galouti Kebab</h3>-->
 <!--                                        </div>-->
 <!--                                        <div class="item_order">-->
 <!--                                            <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
@@ -341,7 +502,7 @@
 <!--                                            <div class="our-item-button wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                                    <button class="btn">Order Now</button>-->
 <!--                                            </div>-->
-<!--                                        </div>   -->
+<!--                                        </div>-->
 <!--                                        <div class="our-item-image wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <img src="{% static 'assets/images/our-item/dinner/dinner-1.png' %}" alt="pasta ieth tomato and chiken source" >-->
 <!--                                            <div class="item-price">$20</div>-->
@@ -352,7 +513,7 @@
 <!--                                    <div class="our-item-inner">-->
 <!--                                        <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <h3 class="mb-0"> Keema Biryani with Makhmali Kofte<br>-->
-<!--                                                        Ajwaini Paneer Kofta Curry </h3>    -->
+<!--                                                        Ajwaini Paneer Kofta Curry </h3>-->
 <!--                                        </div>-->
 <!--                                        <div class="item_order">-->
 <!--                                            <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
@@ -360,13 +521,13 @@
 <!--                                            <div class="our-item-button wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                                    <button class="btn">Order Now</button>-->
 <!--                                            </div>-->
-<!--                                        </div>   -->
+<!--                                        </div>-->
 <!--                                        <div class="our-item-image wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <img src="{% static 'assets/images/our-item/dinner/dinner-2.png' %}" alt="pasta ieth tomato and chiken source" >-->
 <!--                                            <div class="item-price">$20</div>-->
 <!--                                        </div>-->
 <!--                                    </div>-->
-<!--                                 </div>                                    -->
+<!--                                 </div>-->
 <!--                            </div>-->
 <!--                        </div>-->
 <!--                        <div class="tab-pane" id="Dessert">-->
@@ -375,7 +536,7 @@
 <!--                                    <div class="our-item-inner">-->
 <!--                                        <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <h3 class="mb-0"> Butterfinger Cookie Cheesecake Bars<br>-->
-<!--                                                        and Meyer Lemon Bars</h3>    -->
+<!--                                                        and Meyer Lemon Bars</h3>-->
 <!--                                        </div>-->
 <!--                                        <div class="item_order">-->
 <!--                                            <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
@@ -383,7 +544,7 @@
 <!--                                            <div class="our-item-button wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                                    <button class="btn">Order Now</button>-->
 <!--                                            </div>-->
-<!--                                        </div>   -->
+<!--                                        </div>-->
 <!--                                        <div class="our-item-image wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <img src="{% static 'assets/images/our-item/dessert/dessert-1.png' %}" alt="pasta ieth tomato and chiken source" >-->
 <!--                                            <div class="item-price">$20</div>-->
@@ -394,7 +555,7 @@
 <!--                                    <div class="our-item-inner">-->
 <!--                                        <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <h3 class="mb-0"> Chocolate Chip Cookies With Nutella<br>-->
-<!--                                                        and Brown Butter And Sea Salt</h3>    -->
+<!--                                                        and Brown Butter And Sea Salt</h3>-->
 <!--                                        </div>-->
 <!--                                        <div class="item_order">-->
 <!--                                            <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
@@ -402,13 +563,13 @@
 <!--                                            <div class="our-item-button wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                                    <button class="btn">Order Now</button>-->
 <!--                                            </div>-->
-<!--                                        </div>   -->
+<!--                                        </div>-->
 <!--                                        <div class="our-item-image wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <img src="{% static 'assets/images/our-item/dessert/dessert-2.png' %}" alt="pasta ieth tomato and chiken source" >-->
 <!--                                            <div class="item-price">$20</div>-->
 <!--                                        </div>-->
 <!--                                    </div>-->
-<!--                                 </div>                                    -->
+<!--                                 </div>-->
 <!--                            </div>-->
 <!--                        </div>-->
 <!--                        <div class="tab-pane" id="Shake">-->
@@ -417,7 +578,7 @@
 <!--                                    <div class="our-item-inner">-->
 <!--                                        <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <h3 class="mb-0"> Olive Oil–Almond<br>-->
-<!--                                                        and Mocha-Hazelnut</h3>    -->
+<!--                                                        and Mocha-Hazelnut</h3>-->
 <!--                                        </div>-->
 <!--                                        <div class="item_order">-->
 <!--                                            <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
@@ -425,7 +586,7 @@
 <!--                                            <div class="our-item-button wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                                    <button class="btn">Order Now</button>-->
 <!--                                            </div>-->
-<!--                                        </div>   -->
+<!--                                        </div>-->
 <!--                                        <div class="our-item-image wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <img src="{% static 'assets/images/our-item/shake/shake-1.png' %}" alt="pasta ieth tomato and chiken source" >-->
 <!--                                            <div class="item-price">$20</div>-->
@@ -436,7 +597,7 @@
 <!--                                    <div class="our-item-inner">-->
 <!--                                        <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <h3 class="mb-0">Triple Chocolate Stripe<br>-->
-<!--                                                        with Peach Melba</h3>    -->
+<!--                                                        with Peach Melba</h3>-->
 <!--                                        </div>-->
 <!--                                        <div class="item_order">-->
 <!--                                            <p class="wow fadeIn mb-0" data-wow-duration="2s" data-wow-delay=".4s">-->
@@ -444,15 +605,15 @@
 <!--                                            <div class="our-item-button wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                                    <button class="btn">Order Now</button>-->
 <!--                                            </div>-->
-<!--                                        </div>   -->
+<!--                                        </div>-->
 <!--                                        <div class="our-item-image wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">-->
 <!--                                            <img src="{% static 'assets/images/our-item/shake/shake-1.png' %}" alt="pasta ieth tomato and chiken source" >-->
 <!--                                            <div class="item-price">$20</div>-->
 <!--                                        </div>-->
 <!--                                    </div>-->
-<!--                                 </div>                                    -->
+<!--                                 </div>-->
 <!--                            </div>-->
-<!--                        </div>                                   -->
+<!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
 <!--            </div>-->
@@ -461,11 +622,11 @@
     <!-- END our item section -->
 
     <!-- start testimonials section -->
-    <section class="testimonials position-relative">
-        <h2 class="d-none">hidden</h2>
-         <div class="shape-image-three">
-            <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="dotts background image in testiomonial">
-        </div>
+<!--    <section class="testimonials position-relative">-->
+<!--        <h2 class="d-none">hidden</h2>-->
+<!--         <div class="shape-image-three">-->
+<!--            <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="dotts background image in testiomonial">-->
+<!--        </div>-->
 <!--        <div class="container">-->
 <!--            <div class="row specialities-top">-->
 <!--                <div class="col-12 col-md-12 col-lg-12">-->
@@ -573,15 +734,15 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-    </section>
+<!--    </section>-->
     <!-- End testimonials section testimonials -->
 
     <!-- start chef section -->
-    <section class="chef-section position-relative" id="About">
-        <h2 class="d-none">hidden</h2>
-        <div class="shape-image-four">
-            <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="the background decorated dotted chef square image">
-        </div>
+<!--    <section class="chef-section position-relative" id="About">-->
+<!--        <h2 class="d-none">hidden</h2>-->
+<!--        <div class="shape-image-four">-->
+<!--            <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="the background decorated dotted chef square image">-->
+<!--        </div>-->
 <!--        <div class="container position-relative">-->
 <!--            <div class="row specialities-top">-->
 <!--                <div class="col-12 col-md-12 col-lg-12">-->
@@ -668,7 +829,7 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-    </section>
+<!--    </section>-->
     <!-- END chef section -->
     <!--start email-subscription-->
 <!--    <section class="email-subscription position-relative" id="Contact">-->
@@ -696,7 +857,7 @@
     <!--END  email-subscription-->
 
     <!--start download app-->
-    <section class="download-app-section">
+<!--    <section class="download-app-section">-->
 <!--        <div class="container">-->
 <!--            <div class="row specialities-top">-->
 <!--                <div class="col-12 col-md-12 col-lg-12">-->
@@ -708,9 +869,9 @@
 <!--                        <button class="btn">DOWNLOAD APP</button>-->
 <!--                    </div>-->
 <!--                </div>-->
-<!--             </div> -->
+<!--             </div>-->
 <!--        </div>-->
-    </section>
+<!--    </section>-->
     <!--end download app-->
 </div>
 <!-- Page Wrapper -->
@@ -764,16 +925,12 @@
 <!--                  </a>-->
 <!--                </div>-->
 <!--            </div>-->
-
 <!--            <div class="row">-->
 <!--                <div class="col-md-12">-->
 <!--                    <div class="footer-copylink text-center"><span><i class="fas fa-copyright"></i> All Rights Reserved by Cafe360 I Made with <i class="fas fa-heart" style="color: #ff0000;"></i>  I 2022</span>-->
 <!--                    </div>-->
 <!--                </div>  -->
 <!--            </div>-->
-        </div>
-    </div>
-</footer>
 <!--end footer-->
 
 <span class="scroll-top" data-scroll="up">
