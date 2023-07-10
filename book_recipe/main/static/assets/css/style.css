@@ -3,7 +3,7 @@
 Project:    cafe360
 Last change:    24/03/2022 [fixed Float bug, vf]
 Author : The_Krishna
-Primary use:    Food & Restaurant Landing Page Template 
+Primary use:    Food & Restaurant Landing Page Template
 
 -------------------------------------------------------------------*/
 
@@ -12,8 +12,8 @@ Primary use:    Food & Restaurant Landing Page Template
 							[Table of contents]
 
 1. Default css
-2. Button  
-3. Preloader 
+2. Button
+3. Preloader
 4. Animation
 5. Background Shape Image css
 6. Header
@@ -36,23 +36,23 @@ Primary use:    Food & Restaurant Landing Page Template
 - Header Version 2
 - Top Slider Demo
 - Video Background
-- Fullscreen Menu 
-- Comming Soon Page 						
+- Fullscreen Menu
+- Comming Soon Page
 
 -------------------------------------------------------------------*/
 
 
 /*------------------------ [Color codes] ------------------------
-						
 
-Background: #ffffff 
-Content:    #999999 
+
+Background: #ffffff
+Content:    #999999
 Heading h2: #433a8b;
-Header h1, h3, h4, h5, h6:  #000000  
+Header h1, h3, h4, h5, h6:  #000000
 
-a (standard):   #000000 
-a (visited):    #34bf49 
-a (hover):    #34bf49 
+a (standard):   #000000
+a (visited):    #34bf49
+a (hover):    #34bf49
 a (active): #34bf49
 
 -------------------------------------------------------------------*/
@@ -204,7 +204,7 @@ span {
     left: 0;
 }
 .btn.focus, .btn:focus{
-	
+
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -213,7 +213,7 @@ span {
 
 .btn-primary:hover
 {
-	
+
 	color: #000;
     background-color: #58ee6e;
     border-color: #58ee6e;
@@ -230,9 +230,9 @@ span {
     z-index: 9999;
     text-align: center;
     overflow: hidden;
-    display: -webkit-box;      
-	display: -moz-box;      
-	display: -ms-flexbox;   
+    display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: -webkit-flex;
     display: flex;
 }
@@ -240,9 +240,9 @@ span {
     width: 80px;
     height: 80px;
     position: relative;
-    display: -webkit-box;      
-	display: -moz-box;      
-	display: -ms-flexbox;   
+    display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: -webkit-flex;
     display: flex;
     -webkit-box-align:  center;
@@ -278,7 +278,7 @@ svg #cap {
 		-o-transform: translateY(-50px);
 		transform: translateY(-50px);
 	}
-	
+
 	 100% {
 		-webkit-transform: translateY(0);
 		-moz-transform: translateY(0);
@@ -412,7 +412,7 @@ svg #cap {
 }
 /************************ 6. Header ***********************/
 .header {
-	padding: 30px 0;
+	padding: 28px 0;
 	width: 100%;
 	background-color: #ffffff;
 	position: absolute;
@@ -451,10 +451,10 @@ svg #cap {
 }
 .tr-nav-item .nav-link {
 	padding: 0!important;
-	margin: 0 30px;
+	margin: 0 25px;
 	color: #999999;
 	font-weight: 600;
-	font-size: 18px;
+	font-size: 17px;
 	position: relative;
 }
 .tr-nav-item .nav-link:after {
@@ -511,7 +511,7 @@ svg #cap {
 .header-input
 {
 	display: inline;
-     width: 250px;
+     width: 300px;
     border-top: none;
     border-right: none;
     border-left: none;
@@ -525,8 +525,8 @@ svg #cap {
     background: rgb(255 255 255);
     color: #000;
     position: absolute;
-    right: 0;
-    top: 100%;
+    right: -650%;
+    top: 250%;
    	-webkit-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
    	-moz-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
    	-ms-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
@@ -548,7 +548,7 @@ svg #cap {
     background-size: cover;
     background-repeat: no-repeat;
   	padding: 400px 0 160px 0;
-    position: relative; 
+    position: relative;
 }
 .slider-obutton ,.slider-pbutton ,.play-button ,.slider-pbutton p{
     display: inline-block;;
@@ -723,28 +723,14 @@ svg #cap {
 	-moz-transform: scale(1.07);
 	-ms-transform: scale(1.07);
 	-o-transform: scale(1.07);
-	transform: scale(1.07); 
-	-webkit-transition: all 0.4s ease-in-out; 
+	transform: scale(1.07);
+	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-ms-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
 }
 
-.specialities-image::before {
-	position: absolute;
-	top: 0;
-	left: -75%;
-	z-index: 2;
-	display: block;
-	content: '';
-	width: 50%;
-	height: 100%;
-	background: -webkit-linear-gradient(left, rgba(52, 191, 73, 0.5) 0%, rgba(52, 191, 73, 0.5) 100%);
-	background: linear-gradient(to right, rgba(52, 191, 73, 0.5) 0%, rgba(52, 191, 73, 0.5) 100%);
-	-webkit-transform: skewX(-25deg);
-	transform: skewX(-25deg);
-	transition: all 0.4s ease-in-out;
 }
 .specialities-image:hover::before {
 	-webkit-animation: shine .75s;
@@ -858,7 +844,7 @@ svg #cap {
     position: absolute;
     top: 0;
     right: 0;
-} 
+}
 .our-item-section .bx-default-pager
 {
 	display: none;
@@ -907,11 +893,11 @@ svg #cap {
 }
 .our-item .our-item-button{
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: left;
 	float: right;
 }
 .our-item .our-item-button .btn{
-	padding: 15px 40px;   
+	padding: 15px 40px;
 	font-size: 18px;
 }
 .our-item .our-item-image{
@@ -951,10 +937,10 @@ svg #cap {
     border-style: solid;
     border-width: 1px;
     position: relative;
-    animation-name: tesiMove; 
-    animation-duration: 8s; 
-    animation-timing-function: linear; 
-    animation-iteration-count: infinite; 
+    animation-name: tesiMove;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     transition: all .4s ease;
     transform-origin: center center;
     width: 447px;
@@ -979,7 +965,7 @@ svg #cap {
     height: 71px;
     display: inline-block;
     vertical-align: middle;
-    position: absolute; 
+    position: absolute;
 }
 #testimonials-slider-pager .testimonials-slider-pager-one .pager-item:nth-child(1) {
     top: -20px;
@@ -1001,12 +987,12 @@ svg #cap {
 .testimonials-slider-pager-two
 {
 	border-style: solid;
-	animation-name: tesiMove; 
+	animation-name: tesiMove;
 	animation-duration: 8s;
-	animation-timing-function: linear; 
-	animation-iteration-count: infinite; 
-	transition: all .4s ease; 
-	transform-origin: center center; 
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	transition: all .4s ease;
+	transform-origin: center center;
 	margin: 0 auto;
 	vertical-align: middle;
 	width: 323px;
@@ -1059,7 +1045,7 @@ svg #cap {
 }
 #testimonials-slider-pager .testimonials-slider-pager-three .pager-item > img {
     width: 100%;
-    border-radius: 50%; 
+    border-radius: 50%;
 }
 .quote-image {
     margin-bottom: 30px;
@@ -1102,7 +1088,7 @@ svg #cap {
     box-shadow: 10px 10px 57px 0px rgba(103, 114, 148, 0.2);
     width: 100%;
 }
-.chef-content h3{ 
+.chef-content h3{
 	font-size: 30px;
     line-height: 40px;
     color: #464952;
@@ -1149,7 +1135,7 @@ svg #cap {
     position: absolute;
     bottom: 0;
     right: 0;
-} 
+}
 .chef-section .bx-controls-direction a
 {
 	line-height: 48px;
@@ -1236,11 +1222,9 @@ svg #cap {
 }
 /*********************** 15. Footer ********************/
 .footer-bottom{
-    background-image: url(../images/footer-images/footer-back.png);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    padding: 100px 0 43px;
 }
 .footer-bottom:before {
     content: "";
@@ -1280,7 +1264,7 @@ svg #cap {
 	color:#34bf49;
 }
 .footer-logo {
-    padding: 109px 0;
+    padding: 60px 0;
 }
 .footer-copylink{
 	padding-top: 40px;
@@ -1396,9 +1380,9 @@ svg #cap {
 .bx-slide-caption{
 	position: relative;
 	z-index: 2;
-	display: -webkit-box;      
-	display: -moz-box;      
-	display: -ms-flexbox;   
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: -webkit-flex;
     display: flex;
     -webkit-box-align:  center;
@@ -1430,7 +1414,7 @@ svg #cap {
 	font-size: 20px;
 	line-height: 30px;
 	color: #ffffff;
-	
+
 }
 .text-center-p{
 	max-width: 66%;
@@ -1475,7 +1459,7 @@ svg #cap {
   font-size: 20px;
   line-height: 80px;
   color: #ffffff;
-}	
+}
 
 .tp-slide .slider-tp-content.text-center > span,
 .tp-slide .slider-tp-content.text-center h2,
@@ -1539,7 +1523,7 @@ svg #cap {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
-}    
+}
 .video-height-full video {
   position: absolute;
   top: 50%;
@@ -1564,9 +1548,9 @@ iframe#player {
 .video-content{
 	position: relative;
     z-index: 2;
-    display: -webkit-box;      
-	display: -moz-box;      
-	display: -ms-flexbox;   
+    display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: -webkit-flex;
     display: flex;
     -webkit-box-align:  center;
@@ -1618,9 +1602,9 @@ iframe#player {
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
-    display: -webkit-box;      
-	display: -moz-box;      
-	display: -ms-flexbox;   
+    display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: -webkit-flex;
     display: flex;
     -webkit-box-align:  center;
@@ -1650,7 +1634,7 @@ iframe#player {
     overflow-y: auto;
 }
 
-.hamburger-menu.collapsed .menu_line, 
+.hamburger-menu.collapsed .menu_line,
 .hamburger-menu .menu_line {
     position: absolute;
     width: 100%;
@@ -1811,9 +1795,9 @@ iframe#player {
 	height: 100vh;
 	position: relative;
 	z-index: 1;
-	display: -webkit-box;      
-	display: -moz-box;      
-	display: -ms-flexbox;   
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
 	-webkit-box-align:  center;
