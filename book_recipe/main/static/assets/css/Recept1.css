@@ -61,47 +61,46 @@ a (active): #34bf49
 /************************1. Default css***********************/
 
 body {
-	color: #999999;
+	/*color: #999999;*/
 	background-color: #ffffff;
-	font: 400 14px/22px'Josefin Sans', sans-serif;
+	/*font-family: 'Josefin Sans', sans-serif;*/
 }
 html {
 	scroll-behavior: smooth;
 }
-h1,
+/*h1,
+h2,
 h3,
 h4,
 h5,
-h6 {
-	color: #000000;
-}
-h1 {
+h6 {font-family: 'Josefin Sans', sans-serif;}*/
+/*h1 {
 	font-size: 60px;
 	line-height: 70px;
 	font-weight: 700;
-}
-h2 {
+}*/
+/*h2 {
 	font-size: 48px;
 	line-height: 60px;;
 	color: #34bf49;
-}
-h3 {
+}*/
+/*h3 {
 	color: #000000;
 	font-size: 30px;
-}
-h4 {
+}*/
+/*h4 {
 	color: #000000;
 	font-size: 24px;
-}
-h5 {
+}*/
+/*h5 {
 	color: #000000;
 	font-size: 20px;
 }
 h6 {
 	color: #000000;
 	font-size: 16px;
-}
-p {
+}*/
+/*p {
 	font-family: 'Josefin Sans', sans-serif;
 	color: #999999;
 	font-size: 14px;
@@ -118,16 +117,16 @@ a {
 	text-decoration: none !important;
 	font-family: 'Josefin Sans', sans-serif;
 	outline: none;
-}
-img {
+}*/
+/*img {
 	-webkit-transition: 0.4s ease-in-out;
 	-moz-transition: 0.4s ease-in-out;
 	-ms-transition: 0.4s ease-in-out;
 	-o-transition: 0.4s ease-in-out;
 	transition: 0.4s ease-in-out;
 	display: inline-block !important;
-}
-ul {
+}*/
+/*ul {
 	margin-bottom: 0px;
 }
 li {
@@ -136,11 +135,11 @@ li {
 a:hover{
 	color: #433a8b;
 	cursor: pointer;
-}
-span {
+}*/
+/*span {
 	color: #222d39;
 	font-size: 14px;
-}
+}*/
 #wrap {
 	overflow: hidden;
 	position: relative;
@@ -451,7 +450,7 @@ svg #cap {
 }
 .tr-nav-item .nav-link {
 	padding: 0!important;
-	margin: 0 30px;
+	margin: 0 25px;
 	color: #999999;
 	font-weight: 600;
 	font-size: 17px;
@@ -511,7 +510,7 @@ svg #cap {
 .header-input
 {
 	display: inline;
-     width: 300px;
+    width: 300px;
     border-top: none;
     border-right: none;
     border-left: none;
@@ -544,13 +543,13 @@ svg #cap {
 
 /************************ 7. slider content ***********************/
 .home-slider {
-    background-image: url(../images/background-shape/bg-shape1.png);
+    /*background-image: url(../images/background-shape/bg-shape1.png);*/
     background-size: cover;
     background-repeat: no-repeat;
-  	padding: 400px 0 160px 0;
+  	padding: 100px 0 40px 0;
     position: relative; 
 }
-.slider-obutton ,.slider-pbutton ,.play-button ,.slider-pbutton p{
+/*.slider-obutton ,.slider-pbutton ,.play-button ,.slider-pbutton p{
     display: inline-block;;
 }
 .slider-obutton .btn
@@ -567,13 +566,14 @@ svg #cap {
 	font-family: "Josefin Sans";
 	margin-bottom: 16px;
     display: inline-block;
-}
+}*/
 .slider-content h1
 {
+    text-align: center;
 	color: #464952;
 	font-weight: 700;
-	font-family: "Josefin Sans";
-	font-size: 60px;
+	/*font-family: "Josefin Sans";*/
+	font-size: 36px;
 	line-height: 70px;
 }
 .slider-content p
@@ -583,9 +583,9 @@ svg #cap {
 	line-height: 24px;
 	color: #999999;
 	font-weight: 400;
-	font-family: "Josefin Sans";
+	/*font-family: "Josefin Sans";*/
 }
-.slider-video-section
+/*.slider-video-section
 {
 	margin-top: 125px;
 }
@@ -649,9 +649,9 @@ svg #cap {
 .modal-content button:focus
 {
 	outline: none;
-}
+}*/
 
-.home-slider-image
+/*.home-slider-image
 {
 	position: absolute;
     right: 2%;
@@ -667,8 +667,245 @@ svg #cap {
     border-radius: 100%;
 }
 
+/*****************************Recepts**************************************/
+*{
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+body{
+  margin: 0px;
+  fon-size: 55px;
+}
+
+.col-10{
+  text-align: center;
+  font-size: 36px;
+}
+
+.button-1{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 15px;
+  /*font-family:'Josefin Sans', sans-serif;*/
+}
+
+.namee{
+  margin-bottom: 37px;
+  margin-top: 30px;
+}
+
+.ingredients {
+    border-left: 6px solid #4CAF50;
+    height: 100%;
+}
+
+.recept {
+  margin-bottom: 40px;
+}
+
+#Recept {
+  padding: 2px;
+}
+.R {
+  font-size: 22px;
+  background: #e9e9e9;
+  margin: 10px;
+  list-style-type: none;
+  border: 5px solid #e9e9e9;
+  border-radius: 15px;
+  padding-left: 10px;
+}
+
+.button-2{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.info{
+  margin-bottom: 25px;
+}
+
+.Re{
+  margin-bottom: 35px;
+}
+.Re h4{
+  border: 3px solid #4CAF50;
+  padding: 5px;
+  width: 130px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #e9e9e9;
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+.Re p{
+  margin-bottom: 27px;
+  font-size: 20px;
+}
+.heading {
+  font-size: 27px;
+  margin-right: 25px;
+}
+
+.fa {
+  font-size: 25px;
+}
+
+.checked {
+  color: orange;
+}
+.comment{
+  border: 2px solid #e9e9e9;
+  background-color: #e9e9e9;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+.comment p{
+  font-size: 18px;
+}
+
+textarea[name="details"] {
+  resize: none;
+}
+.AddComment{
+  border: 2px solid #e9e9e9;
+  background-color: #e9e9e9;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.AddComment select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+.AddComment label{
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+#Grade{
+  margin-bottom: 6px;
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px){
+  .button-2{
+    font-size: 15px;
+  }
+  ul li {
+    font-size: 19px;
+  }
+  .basis h4{
+    font-size: 19px;
+  }
+  .basis p{
+    font-size: 18px;
+  }
+
+}
+@media screen and (min-width: 393px) and (max-width: 459px){
+  ul li {
+    font-size: 15px;
+  }
+
+  .button-1{
+    font-size: 15px;
+  }
+  .button-2{
+    font-size: 15px;
+  }
+  .basis h4{
+    font-size: 16px;
+    width: 100px
+  }
+  .basis p{
+    font-size: 16px;
+  }
+  .heading {
+    font-size: 21px;
+    margin-right: 25px;
+  }
+
+  .fa {
+    font-size: 18px;
+    text-align: left;
+  }
+  .comment p{
+    font-size: 15px;
+  }
+  .AddComment{
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .AddComment select, textarea {
+    padding: 10px;
+  }
+  .AddComment label{
+    margin-bottom: 4px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 280px) and (max-width: 490px){
+  ul li {
+    font-size: 15px;
+  }
+
+  .button-1{
+    font-size: 15px;
+  }
+  .button-2{
+    font-size: 15px;
+  }
+  .basis h4{
+    font-size: 15px;
+    width: 90px
+  }
+  .basis p{
+    font-size: 15px;
+  }
+  .heading {
+    font-size: 19px;
+    margin-right: 24px;
+  }
+
+  .fa {
+    font-size: 20px;
+    text-align: left;
+  }
+  .comment p{
+    font-size: 15px;
+  }
+  .AddComment{
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .AddComment select, textarea {
+    padding: 10px;
+  }
+  .AddComment label{
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+}
+
 /************************ 8. Heading-title ***********************/
-.specialities-top h2 {
+/*.specialities-top h2 {
 	font-size: 48px;
 	line-height: 70px;
 	color: #34bf49;
@@ -686,10 +923,10 @@ svg #cap {
     text-align: center;
     margin: 0 auto;
     padding: 30px 0 100px;
-}
+}*/
 
 /*********************** 9. specialities ********************/
-.specialities {
+/*.specialities {
     background-image: url(../images/background-shape/bg-shape2.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -791,7 +1028,7 @@ svg #cap {
 }
 /*********************** 10. Our_items ********************/
 
-.our-item-section {
+/*.our-item-section {
     margin-top: -265px;
     padding-bottom: 130px;
 }
@@ -931,11 +1168,11 @@ svg #cap {
     background-color: rgba(52,191,73,0.8);
     position: absolute;
     bottom: 0;
-}
+}*/
 
 /*********************** 11. testimonials ********************/
 
-.testimonials
+/*.testimonials
 {
 	background-image: url(../images/background-shape/bg-shape3.png);
     background-repeat: no-repeat;
@@ -1086,10 +1323,10 @@ svg #cap {
 	color: #9a9a9a;
 	font-weight: 400;
 	font-family: "Josefin Sans";
-}
+}*/
 /*********************** 12. chef section ********************/
 
-.chef-section{
+/*.chef-section{
 	background-image: url(../images/background-shape/bg-shape4.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -1172,9 +1409,9 @@ svg #cap {
 }
 .chef-slider-inner{
   	overflow: hidden;
-}
+}*/
 /*********************** 13. email-subscription ********************/
-.email-subscription{
+/*.email-subscription{
  	background-image: url(../images/background-shape/bg-shape5.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -1221,9 +1458,9 @@ svg #cap {
 }
 .email-form .email-form-button:hover{
 	color: #212529;
-}
+}*/
 /*********************** 14. Download App ********************/
-.download-app-section{
+/*.download-app-section{
  	background-image: url(../images/background-shape/bg-shape6.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -1233,12 +1470,14 @@ svg #cap {
 .download-app-section .btn{
     font-size: 18px;
     padding: 14px 40px;
-}
+}*/
 /*********************** 15. Footer ********************/
 .footer-bottom{
+    /*background-image: url(../images/footer-images/footer-back.png);*/
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    /*padding: 100px 0 43px;*/
 }
 .footer-bottom:before {
     content: "";
