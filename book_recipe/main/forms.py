@@ -4,11 +4,11 @@ from django.forms import ModelForm, TextInput, Textarea, NumberInput
 class RecipeForm(ModelForm):
     class Meta:
         model = Recipe
-        fields = ['title', 'ingredients', 'steps', 'image', 'calories']
+        fields = ['title', 'ingredients', 'steps', 'calories']
 
         widgets = {
             'title': TextInput(attrs={
-                "class" : 'form-control',
+                "class": 'form-control',
                 'placeholder': 'Название блюда'
             }),
             'ingredients': TextInput(attrs={

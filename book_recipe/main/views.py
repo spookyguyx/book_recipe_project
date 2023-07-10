@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import RecipeForm
 
 
 def index(request):
@@ -19,7 +20,13 @@ def lunch(request):
 
 
 def recipes_launch(request):
-    return render(request, 'main/recipes_launch.html')
+    form = RecipeForm
+
+    data = {
+        'form': form
+    }
+
+    return render(request, 'main/recipes_launch.html', data)
 
 
 def recept1(request):
