@@ -61,14 +61,14 @@ a (active): #34bf49
 /************************1. Default css***********************/
 
 body {
-	color: #999999;
+	/*color: #999999;*/
 	background-color: #ffffff;
-	font: 400 14px/22px'Josefin Sans', sans-serif;
+	/*font: 400 14px/22px'Josefin Sans', sans-serif;*/
 }
 html {
 	scroll-behavior: smooth;
 }
-h1,
+/*h1,
 h3,
 h4,
 h5,
@@ -85,7 +85,7 @@ h1 {
 	line-height: 60px;;
 	color: #34bf49;
 }*/
-h3 {
+/*h3 {
 	color: #000000;
 	font-size: 30px;
 }
@@ -127,7 +127,7 @@ a {
 	transition: 0.4s ease-in-out;
 	display: inline-block !important;
 }*/
-ul {
+/*ul {
 	margin-bottom: 0px;
 }
 li {
@@ -140,7 +140,7 @@ a:hover{
 span {
 	color: #222d39;
 	font-size: 14px;
-}
+}*/
 #wrap {
 	overflow: hidden;
 	position: relative;
@@ -451,10 +451,10 @@ svg #cap {
 }
 .tr-nav-item .nav-link {
 	padding: 0!important;
-	margin: 0 30px;
+	margin: 0 25px;
 	color: #999999;
 	font-weight: 600;
-	font-size: 18px;
+	font-size: 17px;
 	position: relative;
 }
 .tr-nav-item .nav-link:after {
@@ -511,7 +511,7 @@ svg #cap {
 .header-input
 {
 	display: inline;
-     width: 250px;
+    width: 300px;
     border-top: none;
     border-right: none;
     border-left: none;
@@ -525,8 +525,8 @@ svg #cap {
     background: rgb(255 255 255);
     color: #000;
     position: absolute;
-    right: 0;
-    top: 100%;
+    right: -650%;
+    top: 250%;
    	-webkit-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
    	-moz-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
    	-ms-box-shadow: 0 0 10px 0px rgba(242, 242, 242, 0.6);
@@ -1277,11 +1277,11 @@ svg #cap {
 }*/
 /*********************** 15. Footer ********************/
 .footer-bottom{
-    background-image: url(../images/footer-images/footer-back.png);
+    /*background-image: url(../images/footer-images/footer-back.png);*/
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    padding: 100px 0 43px;
+    /*padding: 100px 0 43px;*/
 }
 .footer-bottom:before {
     content: "";
@@ -1321,7 +1321,7 @@ svg #cap {
 	color:#34bf49;
 }
 .footer-logo {
-    padding: 109px 0;
+    padding: 60px 0;
 }
 .footer-copylink{
 	padding-top: 40px;
