@@ -16,7 +16,7 @@ def breakfast(request):
 
 
 def lunch(request):
-    return render(request, 'main/lunch.html')
+    return render(request, 'main/obedy.html')
 
 
 def recipes_launch(request):
