@@ -11,3 +11,5 @@ class Recipe(models.Model):
     comments = models.TextField('Комментарии')
     rating = models.IntegerField()
 
+    def __str__(self):
+        return self.title
