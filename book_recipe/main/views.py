@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import RecipeForm
+from .models import Recipe
 
 
 def index(request):
@@ -16,7 +17,9 @@ def breakfast(request):
 
 
 def lunch(request):
-    return render(request, 'main/obedy.html')
+    recipe = Recipe.objects.order_by('-title')
+
+    return render(request, 'main/obedy.html', {'recipe': recipe})
 
 
 def recipes_launch(request):
