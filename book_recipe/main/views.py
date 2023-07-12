@@ -23,10 +23,18 @@ def lunch(request):
 
 
 def recipes_launch(request):
-    form = RecipeForm
+    # if request.method == "POST":
+    #     form = RecipeForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #     else:
+    #         pass
+
+    form = RecipeForm()
 
     data = {
-        'form': form
+        'form': form,
+
     }
 
     return render(request, 'main/recipes_launch.html', data)

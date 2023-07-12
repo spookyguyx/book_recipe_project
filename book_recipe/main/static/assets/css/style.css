@@ -182,6 +182,13 @@ span {
 	z-index: 1;
 	position: relative;
 }
+.btn-succes1{
+
+    display:grid;
+    margin: auto;
+    justify-self: center;
+}
+
 .btn:before {
     top: 0;
     height: 100%;
