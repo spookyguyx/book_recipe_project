@@ -14,7 +14,12 @@ urlpatterns = [
     path('dinner', views.dinner),
     path('dessert', views.dessert),
     path('drink', views.drink),
-    path('favorites', views.favorites)
+    path('favorites', views.favorites),
+    path('breakfast/<int:pk>', views.recipe_id.as_view(), name='recipe_detail'),
+    path('lunch/<int:pk>', views.recipe_id.as_view(), name = 'recipe_detail'),
+    path('dinner/<int:pk>', views.recipe_id.as_view(), name='recipe_detail'),
+    path('dessert/<int:pk>', views.recipe_id.as_view(), name='recipe_detail'),
+    path('drink/<int:pk>', views.recipe_id.as_view(), name='recipe_detail'),
 
 ]
 

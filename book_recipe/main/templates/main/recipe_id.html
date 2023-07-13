@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="{% static 'assets/images/logo/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cafe360 - landing page</title>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/fontawesome-all-min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/brStyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/Recept1.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/media-query.css' %}">
 </head>
 
@@ -79,24 +80,24 @@
                             </span>
                         </button>
                         <div class="collapse navbar-collapse tr-nabar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mr-auto align-self-center">
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="breakfast">Завтраки</a>
+                            <ul class="navbar-nav mr-auto align-self-center" style="margin-left: 0px;">
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/breakfast">Завтраки</a>
                                 </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="lunch">Обеды</a>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/lunch">Обеды</a>
                                 </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="dinner">Ужины</a>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/dinner">Ужины</a>
                                 </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="dessert">Десерты</a>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/dessert">Десерты</a>
                                 </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="drink">Напитки</a>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/drink">Напитки</a>
                                 </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="favorites">Избранное</a>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/favorites">Избранное</a>
                                 </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="signIn">Войти</a>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/signIn">Войти</a>
                                 </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="registration">Регистрация</a>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/registration">Регистрация</a>
                                 </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="recipes_launch">Добавить</a>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/recipes_launch">Добавить</a>
                                 </li>
                             </ul>
                         <div class="header-search"><input type="text" class="form-control header-input" placeholder="Поиск" ><span class="search-icon"><i class="fas fa-search"></i></span><span class='close-icon'><i class='fas fa-times'></i></span></div></div>
@@ -108,41 +109,75 @@
     <!-- End Header -->
 
     <!-- start slider section -->
-    <section class="Ut" style="margin-top: 120px; margin-bottom: 10px;">
-       <h1 class="text-center">Рецепты десертов</h1>
-    </section>
-    <section class="recept-card">
-        <div class="container">
-	            <div class="row">
-                    {%for el in recipe%}
-                        {% if el.category == "dessert" %}
-                        <div class="col-lg-3 col-sm-6 mb-3">
-                            <div class="recept-card">
-                                <div class="recept-image">
-                                    <a href="{% url 'recipe_detail' el.id %}"><img src="{{el.image.url}}" alt=""></a>
-                                </div>
-                                <div class="recept-name">
-                                    <h4><a href="#">{{ el.title }}</a></h4>
-                                </div>
-
-                                <div class="recept-bottom-like d-flex justify-content-between">
-                                    <div>
-                                        <p>Калорийность: {{ el.calories }} кКал</p>
-                                    </div>
-                                    <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
-          <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
-        </svg></a></div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
+<!--        <div class="home-slider-image  wow fadeInRight col-xl-5 col-lg-6 col-md-6 col-12 p-0" data-wow-duration="2s" data-wow-delay=".4s">-->
+<div class="container" style="margin-top: 100px;">
+            <section class="namee">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <h2>{{Recipe.title}}</h2>
+          <form action="page/new.html">
+            <button class="button-1">Добавить в Избранное    <i class="fa fa-bookmark" aria-hidden="true"></i></button>
+          </form>
         </div>
-    <section>
-
+        <div class="col-1"></div>
+      </div>
     </section>
-
+    <section class="recept row">
+      <div class="col-lg-6 col-sm-12">
+        <img src="{{Recipe.image.url}}" alt="Лазанья" class="img-fluid img-thumbnail" alt="Responsive image">
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <div class="ingredients">
+          <p class="text-center h3">Ингредиенты</p>
+          <ul id="Recept">
+            <li class="R">{{Recipe.ingredients}}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="info">
+      <div class="row">
+        <div class="col-xl-4 col-sm-12">
+          <button class="button-2"><i class="fa fa-clock-o" aria-hidden="true"></i>  Время приготовления: {{Recipe.time_cooking}} мин.</button>
+        </div>
+        <div class="col-xl-4 col-sm-12">
+          <button class="button-2"><i class="fa fa-bolt" aria-hidden="true"></i>  Калорийность: {{Recipe.calories}} кКал</button>
+        </div>
+      </div>
+    </section>
+    <section class="Re">
+      <h3>Приготовление:</h3><br>
+      <p>{{Recipe.steps}}</p><br>
+    </section>
+    <section class="comments">
+      <h3>Комментарии:</h3>
+      <div class="comment">
+        <span class="heading">Имя пользователя</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      </div>
+      <h3>Добавить комментарий:</h3>
+      <div class="AddComment">
+        <form action="comment.php">
+            <div id="Grade">
+              <label for="select">Оцени:</label>
+              <select name="Grade">
+                <option value="1">1 звезда</option>
+                <option value="2">2 звезды</option>
+                <option value="3">3 звезды</option>
+                <option value="4">4 звезды</option>
+                <option value="5">5 звезд</option>
+              </select>
+            </div>
+            <textarea name="details" style="width: 100%; height:100px" placeholder="Напишите комментарий" required></textarea>
+            <button type="submit" class="button-1">Добавить комментарий</button>
+        </form>
+      </div>
     </section>
     <!-- END slider section -->
 
@@ -295,6 +330,7 @@
 <script>
     new WOW().init();
 </script>
+</div>
 </body>
 
 </html>

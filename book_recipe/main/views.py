@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import RecipeForm
 from .models import Recipe
-
+from django.views.generic import DetailView
 
 
 def index(request):
@@ -15,7 +15,6 @@ def recipes(request):
 
 def breakfast(request):
     if request.method == 'GET':
-
         recipe = Recipe.objects.order_by('-title')
 
         return render(request, 'main/breakfast.html', {'recipe': recipe})
@@ -23,7 +22,6 @@ def breakfast(request):
 
 def lunch(request):
     if request.method == 'GET':
-
         recipe = Recipe.objects.order_by('-title')
 
         return render(request, 'main/obedy.html', {'recipe': recipe})
@@ -34,17 +32,19 @@ def recipes_launch(request):
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            return redirect('success')
 
         else:
             form = RecipeForm()
 
         data = {
-            'form': form,
+        'form': form,
 
         }
         return render(request, 'main/recipes_launch.html', data)
 
-
+def success(request):
+    return HttpResponse('successfully uploaded')
 
 
 def recept1(request):
@@ -60,7 +60,10 @@ def signin(request):
 
 
 def dinner(request):
-    return render(request, 'main/dinner.html')
+    if request.method == 'GET':
+        recipe = Recipe.objects.order_by('-title')
+
+    return render(request, 'main/dinner.html', {'recipe': recipe})
 
 
 def dessert(request):
@@ -70,8 +73,16 @@ def dessert(request):
 
 
 def drink(request):
-    return render(request, 'main/drink.html')
+    if request.method == 'GET':
+        recipe = Recipe.objects.order_by('-title')
+        return render(request, 'main/drink.html', {'recipe': recipe})
 
 
 def favorites(request):
     return render(request, 'main/favorites.html')
+
+
+class recipe_id(DetailView):
+    model = Recipe
+    template_name = 'main/recipe_id.html'
+    context_object_name = 'Recipe'

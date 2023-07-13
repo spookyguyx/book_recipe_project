@@ -122,7 +122,7 @@
                         <div class="col-lg-3 col-sm-6 mb-3">
                             <div class="recept-card">
                                 <div class="recept-image">
-                                    <a href="#"><img src="{{el.image.url}}" alt=""></a>
+                                    <a href="{% url 'recipe_detail' el.id %}"><img  src="{{el.image.url}}" alt=""></a>
                                 </div>
                                 <div class="recept-name">
                                     <h4><a href="#">{{ el.title }}</a></h4>
