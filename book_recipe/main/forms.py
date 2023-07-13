@@ -1,11 +1,11 @@
 from .models import Recipe
-from django.forms import ModelForm, TextInput, Textarea, NumberInput
+from django.forms import ModelForm, TextInput, Textarea, NumberInput, FileInput
 
 
 class RecipeForm(ModelForm):
     class Meta:
         model = Recipe
-        fields = ['title', 'ingredients', 'steps', 'calories', 'category']
+        fields = ['title', 'ingredients', 'steps', 'calories', 'category', 'image']
         widgets = {
             'title': TextInput(attrs={
                 "class": 'form-control',
@@ -23,4 +23,10 @@ class RecipeForm(ModelForm):
                 "class": 'form-control',
                 'placeholder': 'Кол-во калорий'
             }),
+
+        #     'image': FileInput(attrs={
+        #         'class': 'form-control',
+        #         'placeholder': 'Фото лицевой стороны монеты',
+        #         'accept': 'image'
+        # }),
         }

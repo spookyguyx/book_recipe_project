@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import RecipeForm
 from .models import Recipe
+
 
 
 def index(request):
@@ -13,31 +14,37 @@ def recipes(request):
 
 
 def breakfast(request):
-    return render(request, 'main/breakfast.html')
+    if request.method == 'GET':
+
+        recipe = Recipe.objects.order_by('-title')
+
+        return render(request, 'main/breakfast.html', {'recipe': recipe})
 
 
 def lunch(request):
-    recipe = Recipe.objects.order_by('-title')
+    if request.method == 'GET':
 
-    return render(request, 'main/obedy.html', {'recipe': recipe})
+        recipe = Recipe.objects.order_by('-title')
+
+        return render(request, 'main/obedy.html', {'recipe': recipe})
 
 
 def recipes_launch(request):
     if request.method == "POST":
-        form = RecipeForm(request.POST)
+        form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+
         else:
-            pass
+            form = RecipeForm()
 
-    form = RecipeForm()
+        data = {
+            'form': form,
 
-    data = {
-        'form': form,
+        }
+        return render(request, 'main/recipes_launch.html', data)
 
-    }
 
-    return render(request, 'main/recipes_launch.html', data)
 
 
 def recept1(request):
