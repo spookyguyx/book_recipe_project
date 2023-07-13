@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='home'),
     path('breakfast', views.breakfast),
     path('lunch', views.lunch),
     path('recipes_launch', views.recipes_launch),

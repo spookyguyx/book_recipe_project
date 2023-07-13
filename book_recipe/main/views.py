@@ -28,23 +28,23 @@ def lunch(request):
 
 
 def recipes_launch(request):
-    if request.method == "POST":
+    error = ''
+    form = RecipeForm()
+
+    if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('success')
-
+            return redirect('home')
         else:
-            form = RecipeForm()
+            error = 'Форма была неверно заполнена'
 
-        data = {
+    data = {
         'form': form,
+        'error': error
+    }
 
-        }
-        return render(request, 'main/recipes_launch.html', data)
-
-def success(request):
-    return HttpResponse('successfully uploaded')
+    return render(request, 'main/recipes_launch.html', data)
 
 
 def recept1(request):
