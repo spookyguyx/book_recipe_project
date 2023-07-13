@@ -64,7 +64,9 @@ def dinner(request):
 
 
 def dessert(request):
-    return render(request, 'main/dessert.html')
+    if request.method == 'GET':
+        recipe = Recipe.objects.order_by('-title')
+        return render(request, 'main/dessert.html', {'recipe': recipe})
 
 
 def drink(request):
