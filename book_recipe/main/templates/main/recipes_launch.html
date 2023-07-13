@@ -34,7 +34,10 @@
                                 {{ form.steps }}<br>
                                 <h6>Ккал</h6>{{form.calories}}<br>
                                 <p>Выбрать фотографию блюда</p>
-                                <p><input type="file" name="photo" multiple accept="image/*,image/jpeg">
+                                {{form.image}}
+
+
+<!--                                <p><input type="file" name="photo" multiple accept="image/*,image/jpeg">-->
                                 <button class="btn btn-success" type="submit">Добавить рецепт</button>
 
 
