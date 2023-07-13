@@ -26,15 +26,16 @@
                 <div class="row">
                     <div class="col-12 col-sm-11 col-md-6 col-lg-9 col-xl-10">
                        <div class="recipes_launch">
-                            <form enctype="multipart/form-data" method="post">
+                            <form method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 {{ form.title }}<br>
+                                {{ form.category }}<br>
                                 {{ form.ingredients }}<br>
                                 {{ form.steps }}<br>
                                 <h6>Ккал</h6>{{form.calories}}<br>
                                 <p>Выбрать фотографию блюда</p>
                                 <p><input type="file" name="photo" multiple accept="image/*,image/jpeg">
-                                <button class="btn btn-succes" type="submit">Добавить рецепт</button>
+                                <button class="btn btn-success" type="submit">Добавить рецепт</button>
 
 
 

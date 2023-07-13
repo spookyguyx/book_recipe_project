@@ -23,12 +23,12 @@ def lunch(request):
 
 
 def recipes_launch(request):
-    # if request.method == "POST":
-    #     form = RecipeForm(request.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #     else:
-    #         pass
+    if request.method == "POST":
+        form = RecipeForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            pass
 
     form = RecipeForm()
 
