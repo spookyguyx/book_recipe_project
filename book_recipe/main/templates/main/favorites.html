@@ -61,7 +61,7 @@
             <div class="row align-items-center">
                 <div class="col-6 col-md-4 col-lg-2" style="right: 120px">
                     <div class="logo">
-                        <a href="http://127.0.0.1:8000">
+                        <a href="/..">
                             <img src="{% static 'assets/images/logo/logo.png' %}" class="img-fluid" alt="The cafe360 Logo Image">
                         </a>
                     </div>
@@ -80,24 +80,19 @@
                         </button>
                         <div class="collapse navbar-collapse tr-nabar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto align-self-center">
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="breakfast">Завтраки</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="lunch">Обеды</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="dinner">Ужины</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="dessert">Десерты</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="drink">Напитки</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="favorites">Избранное</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="signIn">Войти</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="registration">Регистрация</a>
-                                </li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="recipes_launch">Добавить</a>
-                                </li>
+                              <li class="nav-item tr-nav-item"><a class="nav-link" href="breakfast">Завтраки</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="lunch">Обеды</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="dinner">Ужины</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="dessert">Десерты</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="drink">Напитки</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="favorites">Избранное</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="recipes_launch">Добавить</a></li>
+                                {% if request.user.is_authenticated %}
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="logout">Выйти</a></li>
+                                {% else %}
+                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="signin">Войти</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="signup">Регистрация</a></li>
+                                {% endif %}
                             </ul>
                         <div class="header-search"><input type="text" class="form-control header-input" placeholder="Поиск" ><span class="search-icon"><i class="fas fa-search"></i></span><span class='close-icon'><i class='fas fa-times'></i></span></div></div>
                     </nav>

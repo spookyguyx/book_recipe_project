@@ -16,18 +16,29 @@ def recipes(request):
 def breakfast(request):
     if request.method == 'GET':
         recipe = Recipe.objects.order_by('-title')
-
-        return render(request, 'main/breakfast.html', {'recipe': recipe})
+        data = {
+            'recipe': recipe
+        }
+        return render(request, 'main/breakfast.html', data)
 
 
 def lunch(request):
     if request.method == 'GET':
         recipe = Recipe.objects.order_by('-title')
-
-        return render(request, 'main/obedy.html', {'recipe': recipe})
+        data = {
+            'recipe': recipe
+        }
+        return render(request, 'main/obedy.html', data)
 
 
 def recipes_launch(request):
+    if request.method == "GET":
+        form = RecipeForm(request.GET)
+        data = {
+            'form': form
+        }
+        return render(request, 'main/recipes_launch.html', data)
+
     if request.method == "POST":
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
@@ -38,8 +49,7 @@ def recipes_launch(request):
             form = RecipeForm()
 
         data = {
-        'form': form,
-
+            'form': form,
         }
         return render(request, 'main/recipes_launch.html', data)
 
@@ -51,38 +61,48 @@ def recept1(request):
     return render(request, 'main/Recept1.html')
 
 
-def registration(request):
-    return render(request, 'main/registration.html')
-
-
-def signin(request):
-    return render(request, 'main/signIn.html')
+# Ненужное
+#
+# def registration(request):
+#     return render(request, 'main/registration.html')
+#
+#
+# def signin(request):
+#     return render(request, 'main/signin.html')
 
 
 def dinner(request):
     if request.method == 'GET':
         recipe = Recipe.objects.order_by('-title')
-
-    return render(request, 'main/dinner.html', {'recipe': recipe})
+        data = {
+            'recipe': recipe
+        }
+    return render(request, 'main/dinner.html', data)
 
 
 def dessert(request):
     if request.method == 'GET':
         recipe = Recipe.objects.order_by('-title')
-        return render(request, 'main/dessert.html', {'recipe': recipe})
+        data = {
+            'recipe': recipe
+        }
+        return render(request, 'main/dessert.html', data)
 
 
 def drink(request):
     if request.method == 'GET':
         recipe = Recipe.objects.order_by('-title')
-        return render(request, 'main/drink.html', {'recipe': recipe})
+        data = {
+            'recipe': recipe
+        }
+        return render(request, 'main/drink.html', data)
 
 
 def favorites(request):
     return render(request, 'main/favorites.html')
 
 
-class recipe_id(DetailView):
+class RecipeId(DetailView):
     model = Recipe
     template_name = 'main/recipe_id.html'
     context_object_name = 'Recipe'

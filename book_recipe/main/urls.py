@@ -4,22 +4,22 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='home'),
     path('breakfast', views.breakfast),
     path('lunch', views.lunch),
     path('recipes_launch', views.recipes_launch),
     path('recept1', views.recept1),
-    path('registration', views.registration),
-    path('signIn', views.signin),
+    # path('registration', views.registration),
+    # path('signin', views.signin),
     path('dinner', views.dinner),
     path('dessert', views.dessert),
     path('drink', views.drink),
     path('favorites', views.favorites),
-    path('breakfast/<int:pk>', views.recipe_id.as_view(), name='recipe_detail'),
-    path('lunch/<int:pk>', views.recipe_id.as_view(), name = 'recipe_detail'),
-    path('dinner/<int:pk>', views.recipe_id.as_view(), name='recipe_detail'),
-    path('dessert/<int:pk>', views.recipe_id.as_view(), name='recipe_detail'),
-    path('drink/<int:pk>', views.recipe_id.as_view(), name='recipe_detail'),
+    path('breakfast/<int:pk>', views.RecipeId.as_view(), name='recipe_detail'),
+    path('lunch/<int:pk>', views.RecipeId.as_view(), name = 'recipe_detail'),
+    path('dinner/<int:pk>', views.RecipeId.as_view(), name='recipe_detail'),
+    path('dessert/<int:pk>', views.RecipeId.as_view(), name='recipe_detail'),
+    path('drink/<int:pk>', views.RecipeId.as_view(), name='recipe_detail'),
 
 ]
 

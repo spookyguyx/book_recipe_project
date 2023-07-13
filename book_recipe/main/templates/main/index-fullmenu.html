@@ -83,14 +83,19 @@
                         <div class="collapse fullscreen-menu-list" id="navbarToggleExternalContent">
                             <div class="navbar-nav">
                                 <ul class="p-0">
-                                    <li class="nav-item full-nav-item"><a class="nav-link" href="#Recipes">Recipes</a>
-                                    </li>
-                                    <li class="nav-item full-nav-item"><a class="nav-link" href="#Packages">Packages</a>
-                                    </li>
-                                    <li class="nav-item full-nav-item"><a class="nav-link" href="#About">About</a>
-                                    </li>
-                                    <li class="nav-item full-nav-item"><a class="nav-link" href="#Contact">Contact</a>
-                                    </li>
+                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="breakfast">Завтраки</a></li>
+                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="lunch">Обеды</a></li>
+                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="dinner">Ужины</a></li>
+                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="dessert">Десерты</a></li>
+                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="drink">Напитки</a></li>
+                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="favorites">Избранное</a></li>
+                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="recipes_launch">Добавить</a></li>
+                                    {% if request.user.is_authenticated %}
+                                        <li class="nav-item tr-nav-item"><a class="nav-link" href="logout">Выйти</a></li>
+                                    {% else %}
+                                        <li class="nav-item tr-nav-item"><a class="nav-link" href="signin">Войти</a></li>
+                                        <li class="nav-item tr-nav-item"><a class="nav-link" href="signup">Регистрация</a></li>
+                                    {% endif %}
                                 </ul>
                                 <div class="header-social-icon">
                                   <a href="javascript:void(0);" class="fb-ic"> <i class="fab fa-facebook-f"></i> </a>

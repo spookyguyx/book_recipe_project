@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zxx" dir="ltr">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/registr.css' %}">
+</head>
+<body>
+    <div class="container">
+    <h2>Регистрация</h2>
+    <form action="/.." method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>Имя:</label>
+            {{ form.username }}
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            {{ form.email }}
+        </div>
+        <div class="form-group">
+            <label>Пароль:</label>
+            {{ form.password1 }}
+        </div>
+        <div class="form-group">
+            <label>Подтвердите пароль:</label>
+           {{ form.password2 }}
+        </div>
+        <div class="form-group">
+            <button type="submit" class="button-1">Создать аккаунт</button>
+        </div>
+    </form>
+        <form action="/.." target="">
+            <button class="button-2">На главную</button>
+        </form>
+    </div>
+</body>
+</html>
