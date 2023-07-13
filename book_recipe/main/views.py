@@ -60,24 +60,17 @@ def signin(request):
 
 
 def dinner(request):
-    if request.method == 'GET':
-
-        recipe = Recipe.objects.order_by('-title')
-
-    return render(request, 'main/dinner.html', {'recipe': recipe})
+    return render(request, 'main/dinner.html')
 
 
 def dessert(request):
-
-    return render(request, 'main/dessert.html')
+    if request.method == 'GET':
+        recipe = Recipe.objects.order_by('-title')
+        return render(request, 'main/dessert.html', {'recipe': recipe})
 
 
 def drink(request):
-    if request.method == 'GET':
-
-        recipe = Recipe.objects.order_by('-title')
-
-    return render(request, 'main/drink.html', {'recipe': recipe})
+    return render(request, 'main/drink.html')
 
 
 def favorites(request):
