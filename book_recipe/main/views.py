@@ -32,6 +32,9 @@ def lunch(request):
 
 
 def recipes_launch(request):
+    error = ''
+    form = RecipeForm()
+
     if request.method == "GET":
         form = RecipeForm(request.GET)
         data = {
@@ -39,22 +42,19 @@ def recipes_launch(request):
         }
         return render(request, 'main/recipes_launch.html', data)
 
-    if request.method == "POST":
+    if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('success')
-
+            return redirect('/')
         else:
-            form = RecipeForm()
+            error = 'Форма была неверно заполнена'
 
-        data = {
-            'form': form,
-        }
-        return render(request, 'main/recipes_launch.html', data)
-
-def success(request):
-    return HttpResponse('successfully uploaded')
+    data = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'main/recipes_launch.html', data)
 
 
 def recept1(request):
