@@ -16,10 +16,10 @@ urlpatterns = [
     path('drink', views.drink),
     path('favorites', views.favorites),
     path('breakfast/<int:pk>', views.RecipeId.as_view(), name='recipe_detail'),
-    path('lunch/<int:pk>', views.RecipeId.as_view(), name = 'recipe_detail'),
-    path('dinner/<int:pk>', views.RecipeId.as_view(), name='recipe_detail'),
-    path('dessert/<int:pk>', views.RecipeId.as_view(), name='recipe_detail'),
-    path('drink/<int:pk>', views.RecipeId.as_view(), name='recipe_detail'),
+    path('lunch/<int:pk>', views.RecipeId.as_view(), name = 'recipe_detail1'),
+    path('dinner/<int:pk>', views.RecipeId.as_view(), name='recipe_detail2'),
+    path('dessert/<int:pk>', views.RecipeId.as_view(), name='recipe_detail3'),
+    path('drink/<int:pk>', views.RecipeId.as_view(), name='recipe_detail4'),
 
 ]
 

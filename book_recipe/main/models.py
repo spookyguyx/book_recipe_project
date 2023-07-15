@@ -10,9 +10,9 @@ CATEGORY_CHOICES = (
 
 
 class Recipe(models.Model):
-    title = models.CharField('Название блюда', max_length=25)
+    title = models.CharField('Название блюда', max_length=50)
     image = models.ImageField(upload_to='image/')
-    ingredients = models.CharField('Ингредиенты', max_length=50)
+    ingredients = models.CharField('Ингредиенты', max_length=300)
     calories = models.IntegerField()
     steps = models.TextField('Шаги приготовления')
     time_cooking = models.IntegerField(default=0)

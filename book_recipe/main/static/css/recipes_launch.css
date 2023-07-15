@@ -20,3 +20,10 @@ section.home-slider{
 .btn{
     margin: 0 auto;
 }
+
+@media screen and (max-width: 48em) {
+	.recipes_launch {
+		width: 100%;
+		padding: 10px;
+	}
+}
