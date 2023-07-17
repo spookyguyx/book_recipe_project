@@ -25,3 +25,16 @@ class Recipe(models.Model):
 
     def get_absolute_url(self):
         return f'{self.id}'
+
+
+class Post(models.Model):
+    post = models.ForeignKey(Recipe, on_delete=models.CASCADE ,related_name='post')
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return 'Comment by {} on {}'.format(self.name, self.post)

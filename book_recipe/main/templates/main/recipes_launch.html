@@ -28,11 +28,14 @@
                                 {% csrf_token %}
                                 {{ form.title }}<br>
                                 {{ form.ingredients }}<br>
+
 <textarea name="steps" cols="40" rows="10" class="form-control" placeholder="Шаги приготовления" required="" id="id_steps" style="
     height: 153.6px;
 "></textarea>
                                 <br>
                                 <h6>кКал</h6>{{form.calories}}<br>
+                                {{form.time_cooking}}<br>
+
 <select name="category" id="id_category" >
   <option value="---">---</option>
 

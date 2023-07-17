@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import RecipeForm
 from .models import Recipe
-from django.views.generic import DetailView
+from django.views.generic import DetailView, View
 
 
 def index(request):
@@ -106,3 +106,9 @@ class RecipeId(DetailView):
     model = Recipe
     template_name = 'main/recipe_id.html'
     context_object_name = 'Recipe'
+
+
+class AddPost(View):
+    def post(self, request, pk):
+        print(request.POST)
+        
