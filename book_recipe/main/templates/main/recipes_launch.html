@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/media-query.css' %}">
-    <link rel="stylesheet" href="{%static 'css/lanch.css' %}">
+    <!--<link rel="stylesheet" href="{%static 'css/lanch.css' %}">-->
     <link rel="stylesheet" href="{%static 'css/recipes_launch.css' %}">
 </head>
 <body>
@@ -20,11 +20,9 @@
     <div id="wrap">
 
         <!-- start slider section -->
-        <section class="home-slider">
-            <h1 class="create_recipes">Добавление рецептов</h1>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-sm-1 col-md-6 col-lg-9 col-xl-10">
+        <!--<section class="home-slider">-->
+        <div class="container1">
+            <h2 id="tu">Добавление рецептов</h2>
                        <div class="recipes_launch">
                             <form method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
@@ -34,11 +32,8 @@
     height: 153.6px;
 "></textarea>
                                 <br>
-                                <h6>Ккал</h6>{{form.calories}}
-<select name="category" id="id_category" style="
-    margin-left: 415px;
-    margin-top: 10px;
-    margin-bottom: 10px;">
+                                <h6>кКал</h6>{{form.calories}}<br>
+<select name="category" id="id_category" >
   <option value="---">---</option>
 
   <option value="breakfast">Завтрак</option>
@@ -60,19 +55,18 @@
 
 <!--&lt;!&ndash;                                <p><input type="file" name="photo" multiple accept="image/*,image/jpeg">&ndash;&gt;-->
 <!--                                <button class="btn btn-success" type="submit">Добавить рецепт</button>-->
-
+                            <button class="button-1"  type="submit">Добавить рецепт</button>
                             </form>
-                            <form action="/..">
-                                <button class="btn btn-success" style="left: 161px; bottom: 35px" type="submit">Добавить рецепт</button>
-                                <br>
-                                <br>
-                                <button class="btn btn-succes1" style="bottom: 35px" type="submit" >На главную</button>
+                            <form action="/.." target="">
+                                <button class="button-2">На главную</button>
                             </form>
+                                <!--<button class="button-1"  type="submit" >На главную</button>-->
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            </div>
+        <!--</section>-->
     <!-- END slider section -->
 
 
