@@ -16,8 +16,7 @@ urlpatterns = [
     path('drink', views.drink),
     path('favorites', views.favorites),
     path('breakfast/<int:pk>', views.RecipeId.as_view(), name='recipe_detail'),
-    path('breakfast/<int:pk>', views.RecipeId.as_view(), name='add_post')
-
+    path("breakfast/<int:pk>", views.AddReview.as_view(), name="add_review"),
 
 ]
 

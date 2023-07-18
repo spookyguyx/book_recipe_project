@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import RecipeForm
+from .forms import RecipeForm, PostForm
 from .models import Recipe
 from django.views.generic import DetailView, View
 
@@ -108,7 +108,14 @@ class RecipeId(DetailView):
     context_object_name = 'Recipe'
 
 
-class AddPost(View):
+class AddReview(View):
+    """Отзывы"""
     def post(self, request, pk):
-        print(request.POST)
-        
+        form = PostForm(request.POST)
+        recipe = Recipe.objects.get(id=pk)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.recipe = recipe
+            form.user = request.user
+            form.save()
+        return redirect('/')

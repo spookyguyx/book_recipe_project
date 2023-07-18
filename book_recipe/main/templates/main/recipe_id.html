@@ -158,8 +158,9 @@
       </div>
       <h3>Добавить комментарий:</h3>
       <div class="AddComment">
-        <form action="{% url 'add_post' recipe.id %}" method="post">
+        <form action="{% url 'add_review' Recipe.id %}" method="post">
             {% csrf_token %}
+<!--            {{form.body}}-->
 <!--            <div id="Grade">-->
 <!--              <label for="select">Оцени:</label>-->
 <!--              <select name="Grade">-->
@@ -170,9 +171,10 @@
 <!--                <option value="5">5 звезд</option>-->
 <!--              </select>-->
 <!--            </div>-->
-            <textarea name="body" style="width: 100%; height:100px" placeholder="Напишите комментарий"  required></textarea>
+            <textarea  style="width: 100%; height:100px" placeholder="Напишите комментарий" name="body" required></textarea>
             <button type="submit" class="button-1">Добавить комментарий</button>
         </form>
+
       </div>
     </section>
     <!-- END slider section -->

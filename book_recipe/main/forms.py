@@ -1,5 +1,6 @@
 from .models import Recipe, Post
 from django.forms import ModelForm, TextInput, Textarea, NumberInput, FileInput
+from django import forms
 
 
 class RecipeForm(ModelForm):
@@ -36,8 +37,15 @@ class RecipeForm(ModelForm):
         # }),
         }
 
-class PostForm(ModelForm):
-
+class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['body']
+
+        widgets = {
+            'body': Textarea(attrs={
+                "class": 'form-control',
+                'placeholder': 'Шаги приготовления'
+            }),
+
+        }

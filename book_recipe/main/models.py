@@ -35,9 +35,10 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
-
     def __str__(self):
-        return 'Comment by {} on {}'.format(self.name, self.post)
+        return f"{self.user} - {self.recipe}"
+
+
 
 
 class RatingStar(models.Model):
@@ -48,10 +49,12 @@ class RatingStar(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.value
+        return self.recipe
 
 
 class Favorite(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     favorite = models.ForeignKey(Recipe, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.user
