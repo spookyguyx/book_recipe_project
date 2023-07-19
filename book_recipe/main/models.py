@@ -18,7 +18,7 @@ class Recipe(models.Model):
     time_cooking = models.IntegerField(default=0)
     comments = models.TextField('Комментарии')
     rating = models.IntegerField(default=0)
-    category = models.CharField(max_length=9, choices=CATEGORY_CHOICES, default='breakfast')
+    category = models.CharField(max_length=9, choices=CATEGORY_CHOICES)
 
     def __str__(self):
         return self.title

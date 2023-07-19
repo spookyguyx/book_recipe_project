@@ -115,6 +115,9 @@
           <form action="page/new.html">
             <button class="button-1">Добавить в Избранное    <i class="fa fa-bookmark" aria-hidden="true"></i></button>
           </form>
+          <form action ="{% url 'recipe_edit' Recipe.id %}">
+            <button class="button-1">Редактировать рецепт</button>
+          </form>
         </div>
         <div class="col-1"></div>
       </div>
