@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import RecipeForm
-from .models import Recipe
+from .models import Recipe, Favorite
 from django.views.generic import DetailView
 
 
@@ -45,6 +45,8 @@ def recipes_launch(request):
     if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
             form.save()
             return redirect('/')
         else:
@@ -53,8 +55,18 @@ def recipes_launch(request):
     data = {
         'form': form,
         'error': error
+
     }
     return render(request, 'main/recipes_launch.html', data)
+
+
+def profile1(request):
+    if request.method == 'GET':
+        recipe = Recipe.objects.filter(user=request.user).order_by('-title')
+        data = {
+            'recipe': recipe
+        }
+        return render(request, 'main/profile1.html', data)
 
 
 def recept1(request):
@@ -99,7 +111,13 @@ def drink(request):
 
 
 def favorites(request):
-    return render(request, 'main/favorites.html')
+    if request.method == 'GET':
+        recipe = Favorite.objects.filter(user=request.user).order_by('-title')
+        
+        data = {
+            'recipe': recipe
+        }
+    return render(request, 'main/favorites.html', data)
 
 def profile(request):
     user = request.user

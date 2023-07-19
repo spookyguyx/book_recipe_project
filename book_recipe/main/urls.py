@@ -15,7 +15,7 @@ urlpatterns = [
     path('dessert', views.dessert),
     path('drink', views.drink),
     path('favorites', views.favorites),
-    path('profile', views.profile, name="profile"),
+    path('profile', views.profile),
     path('breakfast/<int:pk>', views.RecipeId.as_view(), name='recipe_detail'),
     path('lunch/<int:pk>', views.RecipeId.as_view(), name = 'recipe_detail1'),
     path('dinner/<int:pk>', views.RecipeId.as_view(), name='recipe_detail2'),
@@ -24,8 +24,7 @@ urlpatterns = [
     # path('recipe/<int:recipe_id>/toggle_favorite/', toggle_favorite, name='toggle_favorite'),
     #path('recipe/<int:recipe_id>/add_to_favorites/', views.add_to_favorites, name='add_to_favorites'),
     #path('recipe/<int:recipe_id>/remove_from_favorites/', views.remove_from_favorites, name='remove_from_favorites'),
-    path('profile/', views.profile, name='profile'),
-
+    path('profile1', views.profile1)
 ]
 
 if settings.DEBUG:
