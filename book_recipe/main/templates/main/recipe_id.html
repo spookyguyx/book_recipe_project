@@ -86,9 +86,10 @@
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/dinner">Ужины</a></li>
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/dessert">Десерты</a></li>
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/drink">Напитки</a></li>
+                                {% if request.user.is_authenticated %}
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/favorites">Избранное</a></li>
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/recipes_launch">Добавить</a></li>
-                                {% if request.user.is_authenticated %}
+
                                     <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/logout">Выйти</a></li>
                                 {% else %}
                                     <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/signin">Войти</a></li>
@@ -111,9 +112,16 @@
         <div class="col-1"></div>
         <div class="col-10">
           <h2>{{Recipe.title}}</h2>
-          <form action="page/new.html">
-            <button class="button-1">Добавить в Избранное    <i class="fa fa-bookmark" aria-hidden="true"></i></button>
-          </form>
+            {% if request.user.is_authenticated %}
+                {% if request.user in article.users_favorite.all %}
+                    <a href="{% url 'toggle_favorite' Recipe.id %}">Удалить из избранного</a>
+                {% else %}
+                    <a href="{% url 'toggle_favorite' Recipe.id %}">Добавить в избранное</a>
+                {% endif %}
+            {% else %}
+
+                <!-- Обработка, если пользователь не аутентифицирован -->
+            {% endif %}
         </div>
         <div class="col-1"></div>
       </div>
