@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="zxx" dir="ltr">
 <head>
     {% load static %}
@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/brStyle.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/media-query.css' %}">
+    <link rel="stylesheet" href="{%static 'css/lanch.css' %}">
 </head>
 
 <body data-spy="scroll" data-target="#myHeader">
@@ -86,7 +87,7 @@
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="dessert">Десерты</a></li>
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="drink">Напитки</a></li>
                                 {% if request.user.is_authenticated %}
-                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="recipes_launch">Добавить</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="recipes_launch">Добавить</a></li>
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="favorites">Избранное</a></li>
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="profile">Профиль</a></li>
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="logout">Выйти</a></li>
@@ -104,41 +105,40 @@
     <!-- End Header -->
 
     <!-- start slider section -->
-    <section class="Ut" style="margin-top: 120px; margin-bottom: 10px;">
-       <h1 class="text-center">Рецепты напитков</h1>
+    <!--<section class="home-slider">
+    </section>-->
+    <section class="Ut" style="margin-top: 130px; margin-bottom: 10px;">
+       <h1 class="text-center">Здравствуйте, {{ user.username }}</h1><br>
+        <h1 class="text-center">Мои рецепты</h1>
     </section>
     <section class="recept-card">
-	    <div class="container">
+        <div class="container">
 	            <div class="row">
-	                {%for el in recipe%}
-                        {% if el.category == "drink" %}
+                    {%for el in recipe%}
+                        {% if el.category == "breakfast" %}
                         <div class="col-lg-3 col-sm-6 mb-3">
                             <div class="recept-card">
                                 <div class="recept-image">
-                                    <a href="{% url 'recipe_detail4' el.id %}"><img src="{{el.image.url}}" alt=""></a>
+                                    <a href="{% url 'recipe_detail' el.id %}"><img  src="{{el.image.url}}" alt=""></a>
                                 </div>
                                 <div class="recept-name">
-                                    <h4><a href="#">{{el.title}}</a></h4>
+                                    <h4><a href="#">{{ el.title }}</a></h4>
                                 </div>
+
                                 <div class="recept-bottom-like d-flex justify-content-between">
                                     <div>
-                                            <div>
-                                                <p>Калорийность: {{el.calories}} ккал</p>
-                                            </div>
+                                        <p>Калорийность: {{ el.calories }} кКал</p>
                                     </div>
                                     <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
           <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
         </svg></a></div>
                                 </div>
-
                             </div>
-
                         </div>
                         {% endif %}
-                    {%endfor%}
-
-	            </div>
-	        </div>
+                    {% endfor %}
+                </div>
+        </div>
     <section>
 
     </section>

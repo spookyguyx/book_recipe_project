@@ -15,6 +15,7 @@ urlpatterns = [
     path('dessert', views.dessert),
     path('drink', views.drink),
     path('favorites', views.favorites),
+    path('profile', views.profile, name="profile"),
     path('breakfast/<int:pk>', views.RecipeId.as_view(), name='recipe_detail'),
     path('lunch/<int:pk>', views.RecipeId.as_view(), name = 'recipe_detail1'),
     path('dinner/<int:pk>', views.RecipeId.as_view(), name='recipe_detail2'),

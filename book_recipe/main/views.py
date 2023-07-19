@@ -101,7 +101,9 @@ def drink(request):
 def favorites(request):
     return render(request, 'main/favorites.html')
 
-
+def profile(request):
+    user = request.user
+    return render(request, 'main/profile.html', {'user': user})
 class RecipeId(DetailView):
     model = Recipe
     template_name = 'main/recipe_id.html'
