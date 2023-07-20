@@ -4,6 +4,7 @@ from django.views.generic import DetailView
 
 from .forms import RecipeForm
 from django.views.generic import DetailView, UpdateView
+from .models import Recipe
 
 
 class RecipeEdit(UpdateView):
@@ -141,4 +142,4 @@ def profile1(request):
         data = {
             'recipe': recipe,
         }
-        return render(request, 'users/profile1.html', data)
+        return render(request, 'main/profile1.html', data)
