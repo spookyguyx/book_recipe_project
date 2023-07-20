@@ -178,17 +178,23 @@
     <section class="comments">
       <h3>Комментарии:</h3>
       <div class="comment">
-        <span class="heading">Имя пользователя</span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
+          <form method="GET">
+              {% csrf_token %}
+              {{ form.content }}
+<!--              <span class="heading">Имя пользователя</span>-->
+<!--              <span class="fa fa-star checked"></span>-->
+<!--              <span class="fa fa-star checked"></span>-->
+<!--              <span class="fa fa-star checked"></span>-->
+<!--              <span class="fa fa-star checked"></span>-->
+<!--              <span class="fa fa-star"></span>-->
+          </form>
         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
       </div>
       <h3>Добавить комментарий:</h3>
       <div class="AddComment">
-        <form action="comment.php">
+        <form method="POST">
+            {% csrf_token %}
+            {{ reviews.content }}
             <div id="Grade">
               <label for="select">Оцени:</label>
               <select name="Grade">
@@ -199,7 +205,7 @@
                 <option value="5">5 звезд</option>
               </select>
             </div>
-            <textarea name="details" style="width: 100%; height:100px" placeholder="Напишите комментарий" required></textarea>
+            <textarea name="details" style="width: 100%; height:100px" placeholder="Напишите комментарий" required>{{form.content}}</textarea>
             <button type="submit" class="button-1">Добавить комментарий</button>
         </form>
       </div>

@@ -147,6 +147,7 @@
     </section>
     <section class="comments">
       <h3>Комментарии:</h3>
+
       <div class="comment">
         <span class="heading">Имя пользователя</span>
         <span class="fa fa-star checked"></span>
@@ -158,7 +159,8 @@
       </div>
       <h3>Добавить комментарий:</h3>
       <div class="AddComment">
-        <form action="comment.php">
+        <form method="POST">
+            {% csrf_token %}
             <div id="Grade">
               <label for="select">Оцени:</label>
               <select name="Grade">
@@ -169,7 +171,7 @@
                 <option value="5">5 звезд</option>
               </select>
             </div>
-            <textarea name="details" style="width: 100%; height:100px" placeholder="Напишите комментарий" required></textarea>
+            {{ form }}
             <button type="submit" class="button-1">Добавить комментарий</button>
         </form>
       </div>

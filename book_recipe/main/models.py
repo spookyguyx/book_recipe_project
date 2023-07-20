@@ -1,5 +1,8 @@
 from django.db import models
 
+from django.contrib.auth.models import User
+from django.shortcuts import reverse
+
 CATEGORY_CHOICES = (
     ('breakfast', 'BREAKFAST'),
     ('lunch', 'LUNCH'),
@@ -24,4 +27,16 @@ class Recipe(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return f'{self.id}'
+        return reverse('breakfast_detail', args=[str(self.pk)])
+
+
+# Комментарии, но для слабых
+class Reviews(models.Model):
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='review')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField(max_length=160, null=True)
+    time = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.recipe.title}-{str(self.user.username)}"
