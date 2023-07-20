@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Добавление рецептов</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/media-query.css' %}">
+    <!--<link rel="stylesheet" href="{%static 'css/lanch.css' %}">-->
+    <link rel="stylesheet" href="{%static 'css/recipes_launch.css' %}">
+</head>
+<body>
+
+
+    <div id="wrap">
+
+        <!-- start slider section -->
+        <!--<section class="home-slider">-->
+        <div class="container1">
+            <h2 id="tu">Редактирование рецептов</h2>
+                       <div class="recipes_launch">
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ form.title }}<br>
+                                {{ form.ingredients }}<br>
+                                {{ form.steps }} <br>
+<!--<textarea name="steps" cols="40" rows="10" class="form-control" placeholder="Шаги приготовления" required="" id="id_steps" style="
+    height: 153.6px;
+"></textarea>-->
+                                <br>
+                                <h6>кКал</h6>{{form.calories}}<br>
+                                <h6>{{form.online}} Опубликовать</h6>
+<select name="category" id="id_category" >
+  <option value="---">---</option>
+
+  <option value="breakfast">Завтрак</option>
+
+  <option value="lunch">Обед</option>
+
+  <option value="dinner">Ужин</option>
+
+  <option value="dessert">Десерт</option>
+
+  <option value="drink">Напиток</option>
+
+</select>
+
+
+                                <p>Выбрать фотографию блюда</p>
+                                {{form.image}}
+
+
+<!--&lt;!&ndash;                                <p><input type="file" name="photo" multiple accept="image/*,image/jpeg">&ndash;&gt;-->
+<!--                                <button class="btn btn-success" type="submit">Добавить рецепт</button>-->
+                            <button class="button-1"  type="submit">Изменить рецепт</button>
+                            </form>
+                            <form action="/.." target="">
+                                <button class="button-2">На главную</button>
+                            </form>
+                                <!--<button class="button-1"  type="submit" >На главную</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        <!--</section>-->
+    <!-- END slider section -->
+
+
+    </div>
+
+<footer class="position-relative wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">
+    <div class="footer-bottom" style="top: 0px;">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <div class="footer-menu text-center">
+<!--                        <ul>-->
+<!--                            <li class="nav-item"><a class="nav-link" href="Завтраки">Завтраки</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item"><a class="nav-link" href="Обеды">Обеды</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item"><a class="nav-link" href="Ужины">Ужины</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item"><a class="nav-link" href="Десерты">Десерты</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item"><a class="nav-link" href="Напитки">Напитки</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item"><a class="nav-link" href="Избранное">Избранное</a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+                    </div>
+                 </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12 text-center">
+                    <div class="footer-logo">
+                        <img src="{% static 'assets/images/footer-images/dsadadsdad.png' %}" alt="the logo image | Footer cafe Logo" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>

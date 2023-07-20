@@ -8,6 +8,8 @@ urlpatterns = [
     path('favorites/', views.user_favorite, name='user_favorite'),
     path('recipes_launch', views.recipes_launch),
     path('recept1', views.recept1),
+    path('profile1', views.profile1),
+    path('<int:pk>/edit', views.RecipeEdit.as_view(), name='recipe_edit'),
     # path('recipe/<int:recipe_id>/toggle_favorite/', toggle_favorite, name='toggle_favorite'),
     # path('recipe/<int:recipe_id>/add_to_favorites/', views.add_to_favorites, name='add_to_favorites'),
     # path('recipe/<int:recipe_id>/remove_from_favorites/', views.remove_from_favorites, name='remove_from_favorites'),

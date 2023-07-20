@@ -3,7 +3,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import DetailView
 
 from .forms import RecipeForm
-from .models import Recipe
+from django.views.generic import DetailView, UpdateView
+
+
+class RecipeEdit(UpdateView):
+    model = Recipe
+    template_name = 'main/edit.html'
+    form_class = RecipeForm
 
 
 def index(request):

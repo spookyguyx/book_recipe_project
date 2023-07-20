@@ -29,7 +29,7 @@ class Recipe(models.Model):
         return f'{self.user.username}: {self.category} - "{self.title}"'
 
     def get_absolute_url(self):
-        return self.id
+        return f'/{self.category}/{self.id}'
 
 
 class Comment(models.Model):
