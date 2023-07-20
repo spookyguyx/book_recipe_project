@@ -1,5 +1,7 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.contrib.auth import get_user_model
+
 
 CATEGORY_CHOICES = (
     ('breakfast', 'BREAKFAST'),
@@ -17,22 +19,34 @@ class Recipe(models.Model):
     calories = models.IntegerField()
     steps = models.TextField('Шаги приготовления')
     time_cooking = models.IntegerField(default=0)
-    comments = models.TextField('Комментарии')
     rating = models.IntegerField(default=0)
     category = models.CharField(max_length=9, choices=CATEGORY_CHOICES, default='breakfast')
     online = models.BooleanField(default=False)
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    favorite = models.ManyToManyField(User, related_name='favorite', blank=True)
 
     def __str__(self):
-        return f'{self.user} - {self.title}'
+        return f'{self.user.username}: {self.category} - "{self.title}"'
 
     def get_absolute_url(self):
-        return f'{self.id}'
+        return self.id
 
 
-class Favorite(models.Model):
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    favorite = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+class Comment(models.Model):
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
+    text = models.TextField()
+    time = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['-time']
+        verbose_name = 'Comment'
+        verbose_name_plural = 'Comments'
+
+    def approve(self):
+        self.approved = True
+        self.save()
 
     def __str__(self):
-        return f'{self.user} - {self.favorite}'
+        return self.text

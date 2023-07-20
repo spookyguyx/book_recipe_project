@@ -5,26 +5,28 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('breakfast', views.breakfast),
-    path('lunch', views.lunch),
+    path('favorites/<int:recipe_id>', views.favorite_recipe, name='favorite_post'),
+    path('favorites/', views.user_favorite, name='user_favorite'),
     path('recipes_launch', views.recipes_launch),
     path('recept1', views.recept1),
-    # path('registration', views.registration),
-    # path('signin', views.signin),
-    path('dinner', views.dinner),
-    path('dessert', views.dessert),
-    path('drink', views.drink),
-    path('favorites', views.favorites),
-    path('profile', views.profile),
-    path('breakfast/<int:pk>', views.RecipeId.as_view(), name='recipe_detail'),
-    path('lunch/<int:pk>', views.RecipeId.as_view(), name = 'recipe_detail1'),
-    path('dinner/<int:pk>', views.RecipeId.as_view(), name='recipe_detail2'),
-    path('dessert/<int:pk>', views.RecipeId.as_view(), name='recipe_detail3'),
-    path('drink/<int:pk>', views.RecipeId.as_view(), name='recipe_detail4'),
     # path('recipe/<int:recipe_id>/toggle_favorite/', toggle_favorite, name='toggle_favorite'),
-    #path('recipe/<int:recipe_id>/add_to_favorites/', views.add_to_favorites, name='add_to_favorites'),
-    #path('recipe/<int:recipe_id>/remove_from_favorites/', views.remove_from_favorites, name='remove_from_favorites'),
-    path('profile1', views.profile1)
+    # path('recipe/<int:recipe_id>/add_to_favorites/', views.add_to_favorites, name='add_to_favorites'),
+    # path('recipe/<int:recipe_id>/remove_from_favorites/', views.remove_from_favorites, name='remove_from_favorites'),
+
+    # Recipes listed
+    path('breakfast', views.breakfast, name='breakfast'),
+    path('lunch', views.lunch, name='lunch'),
+    path('dinner', views.dinner, name='dinner'),
+    path('dessert', views.dessert, name='dessert'),
+    path('drink', views.drink, name='drink'),
+
+    # Recipes detailed
+    path('breakfast/<int:pk>', views.RecipeId.as_view(), name='breakfast_detail'),
+    path('lunch/<int:pk>', views.RecipeId.as_view(), name='lunch_detail'),
+    path('dinner/<int:pk>', views.RecipeId.as_view(), name='dinner_detail'),
+    path('dessert/<int:pk>', views.RecipeId.as_view(), name='dessert_detail'),
+    path('drink/<int:pk>', views.RecipeId.as_view(), name='drink_detail'),
+
 ]
 
 if settings.DEBUG:

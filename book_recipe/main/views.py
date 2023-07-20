@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .forms import RecipeForm
-from .models import Recipe, Favorite
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import DetailView
+
+from .forms import RecipeForm
+from .models import Recipe
 
 
 def index(request):
@@ -60,15 +61,6 @@ def recipes_launch(request):
     return render(request, 'main/recipes_launch.html', data)
 
 
-def profile1(request):
-    if request.method == 'GET':
-        recipe = Recipe.objects.filter(user=request.user).order_by('-title')
-        data = {
-            'recipe': recipe
-        }
-        return render(request, 'main/profile1.html', data)
-
-
 def recept1(request):
     return render(request, 'main/Recept1.html')
 
@@ -110,18 +102,27 @@ def drink(request):
         return render(request, 'main/drink.html', data)
 
 
-def favorites(request):
-    if request.method == 'GET':
-        recipe = Favorite.objects.filter(user=request.user).order_by('-title')
-        
-        data = {
-            'recipe': recipe
-        }
-    return render(request, 'main/favorites.html', data)
+def favorite_recipe(request, recipe_id):
+    if request.method == "POST":
+        recipe = get_object_or_404(Recipe, pk=recipe_id)
+        if not recipe.favorite.filter(id=request.user.id).exists():
+            recipe.favorite.add(request.user)
+            recipe.save()
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        else:
+            recipe.favorite.remove(request.user)
+            recipe.save()
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-def profile(request):
+
+def user_favorite(request):
     user = request.user
-    return render(request, 'main/profile.html', {'user': user})
+    recipes = Recipe.objects.filter(favorite__in=[user])
+
+    context = {'user': user, "recipes": recipes}
+    return render(request, "main/favorites.html", context)
+
+
 class RecipeId(DetailView):
     model = Recipe
     template_name = 'main/recipe_id.html'

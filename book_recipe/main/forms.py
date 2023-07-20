@@ -1,32 +1,42 @@
-from .models import Recipe
-from django.forms import ModelForm, TextInput, Textarea, NumberInput, FileInput
+from .models import Recipe, Comment
+from django import forms
 
 
-class RecipeForm(ModelForm):
+class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = ['title', 'ingredients', 'steps', 'calories', 'category', 'image']
         widgets = {
-            'title': TextInput(attrs={
+            'title': forms.TextInput(attrs={
                 "class": 'form-control',
                 'placeholder': 'Название блюда'
             }),
-            'ingredients': TextInput(attrs={
+            'ingredients': forms.TextInput(attrs={
                 "class": 'form-control',
                 'placeholder': 'Ингридиенты'
             }),
-            'steps': Textarea(attrs={
+            'steps': forms.Textarea(attrs={
                 "class": 'form-control',
                 'placeholder': 'Шаги приготовления'
             }),
-            'calories': NumberInput(attrs={
+            'calories': forms.NumberInput(attrs={
                 "class": 'form-control',
                 'placeholder': 'Кол-во калорий'
             }),
-
-        #     'image': FileInput(attrs={
-        #         'class': 'form-control',
-        #         'placeholder': 'Фото лицевой стороны монеты',
-        #         'accept': 'image'
-        # }),
         }
+
+    def __init__(self, *args, **kwargs):
+        super(RecipeForm, self).__init__(*args, **kwargs)
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['text']
+
+        labels = {
+            'text': 'Ваш комментарий'
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(CommentForm, self).__init__(*args, **kwargs)

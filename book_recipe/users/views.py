@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
 from .forms import SignInForm, SignUpForm
+from main.models import Recipe
 
 
 def sign_in(request):
@@ -61,3 +62,19 @@ def sign_up(request):
                 'form': form
             }
             return render(request, 'users/registration.html', context)
+
+
+def profile1(request):
+    if request.method == 'GET':
+        recipe = Recipe.objects.filter(user=request.user).order_by('-title')
+        data = {
+            'recipe': recipe,
+        }
+        return render(request, 'users/profile1.html', data)
+
+
+def profile(request):
+    user = request.user
+    return render(request, 'users/profile.html', {'user': user})
+
+

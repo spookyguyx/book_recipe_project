@@ -24,7 +24,6 @@ class Migration(migrations.Migration):
                 ('calories', models.IntegerField()),
                 ('steps', models.TextField(verbose_name='Шаги приготовления')),
                 ('time_cooking', models.IntegerField(default=0)),
-                ('comments', models.TextField(verbose_name='Комментарии')),
                 ('rating', models.IntegerField(default=0)),
                 ('category', models.CharField(choices=[('breakfast', 'BREAKFAST'), ('lunch', 'LUNCH'), ('dinner', 'DINNER'), ('dessert', 'DESSERT'), ('drink', 'DRINK')], default='breakfast', max_length=9)),
                 ('online', models.BooleanField(default=False)),
