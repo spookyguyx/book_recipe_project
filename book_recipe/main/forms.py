@@ -5,7 +5,7 @@ from django.forms import ModelForm, TextInput, Textarea, NumberInput, FileInput
 class RecipeForm(ModelForm):
     class Meta:
         model = Recipe
-        fields = ['title', 'ingredients', 'steps', 'calories', 'category', 'image']
+        fields = ['title', 'ingredients', 'steps', 'calories', 'category', 'image', 'online']
         widgets = {
             'title': TextInput(attrs={
                 "class": 'form-control',

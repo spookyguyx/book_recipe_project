@@ -2,8 +2,13 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import RecipeForm
 from .models import Recipe, Favorite
-from django.views.generic import DetailView
+from django.views.generic import DetailView, UpdateView
 
+
+class RecipeEdit(UpdateView):
+    model = Recipe
+    template_name = 'main/edit.html'
+    form_class = RecipeForm
 
 def index(request):
     return render(request, 'main/index.html')
@@ -112,7 +117,7 @@ def drink(request):
 
 def favorites(request):
     if request.method == 'GET':
-        recipe = Favorite.objects.filter(user=request.user).order_by('-title')
+        recipe = Recipe.objects.filter(user=request.user).order_by('-title')
         
         data = {
             'recipe': recipe

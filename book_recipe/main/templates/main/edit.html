@@ -22,18 +22,19 @@
         <!-- start slider section -->
         <!--<section class="home-slider">-->
         <div class="container1">
-            <h2 id="tu">Добавление рецептов</h2>
+            <h2 id="tu">Редактирование рецептов</h2>
                        <div class="recipes_launch">
                             <form method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
-
                                 {{ form.title }}<br>
                                 {{ form.ingredients }}<br>
-<textarea name="steps" cols="40" rows="10" class="form-control" placeholder="Шаги приготовления" required="" id="id_steps" style="
+                                {{ form.steps }} <br>
+<!--<textarea name="steps" cols="40" rows="10" class="form-control" placeholder="Шаги приготовления" required="" id="id_steps" style="
     height: 153.6px;
-"></textarea>
+"></textarea>-->
                                 <br>
                                 <h6>кКал</h6>{{form.calories}}<br>
+                                <h6>{{form.online}} Опубликовать</h6>
 <select name="category" id="id_category" >
   <option value="---">---</option>
 
@@ -56,7 +57,7 @@
 
 <!--&lt;!&ndash;                                <p><input type="file" name="photo" multiple accept="image/*,image/jpeg">&ndash;&gt;-->
 <!--                                <button class="btn btn-success" type="submit">Добавить рецепт</button>-->
-                            <button class="button-1"  type="submit">Добавить рецепт</button>
+                            <button class="button-1"  type="submit">Изменить рецепт</button>
                             </form>
                             <form action="/.." target="">
                                 <button class="button-2">На главную</button>

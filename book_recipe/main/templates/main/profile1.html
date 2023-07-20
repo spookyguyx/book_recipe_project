@@ -120,7 +120,13 @@
                                     <div class="recept-name">
                                         <h4><a href="#">{{el.title}}</a></h4>
                                     </div>
+                                    <form action="{% url 'recipe_edit' el.id %}" >
+                                        <button class="bott">Редактировать</button>
+                                    </form>
                                     <div class="recept-bottom-like d-flex justify-content-between">
+
+
+
                                         <div>
                                                 <div>
                                                     <p>Калорийность: {{el.calories}} ккал</p>

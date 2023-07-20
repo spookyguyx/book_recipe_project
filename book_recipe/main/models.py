@@ -27,7 +27,8 @@ class Recipe(models.Model):
         return f'{self.user} - {self.title}'
 
     def get_absolute_url(self):
-        return f'{self.id}'
+        return f'/{self.category}/{self.id}'
+
 
 
 class Favorite(models.Model):

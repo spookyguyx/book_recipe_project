@@ -708,6 +708,17 @@ svg #cap {
 	padding-left: 20px;
 }
 
+.bott{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    margin-left: 20px;
+    padding: 7px;
+    padding-left: 8px;
+    border-radius: 15px;
+    text-align: center;
+}
+
 /************************ 8. Heading-title ***********************/
 /*.specialities-top h2 {
 	font-size: 48px;
