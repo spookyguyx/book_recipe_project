@@ -64,15 +64,6 @@ def sign_up(request):
             return render(request, 'users/registration.html', context)
 
 
-def profile1(request):
-    if request.method == 'GET':
-        recipe = Recipe.objects.filter(user=request.user).order_by('-title')
-        data = {
-            'recipe': recipe,
-        }
-        return render(request, 'users/profile1.html', data)
-
-
 def profile(request):
     user = request.user
     return render(request, 'users/profile.html', {'user': user})

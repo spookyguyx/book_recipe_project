@@ -127,3 +127,12 @@ class RecipeId(DetailView):
     model = Recipe
     template_name = 'main/recipe_id.html'
     context_object_name = 'Recipe'
+
+
+def profile1(request):
+    if request.method == 'GET':
+        recipe = Recipe.objects.filter(user=request.user).order_by('-title')
+        data = {
+            'recipe': recipe,
+        }
+        return render(request, 'users/profile1.html', data)
