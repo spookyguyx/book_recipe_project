@@ -5,10 +5,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='home'),
+    path('favorites/<int:recipe_id>', views.favorite_recipe, name='favorite_recipe'),
     path('favorites/', views.user_favorite, name='user_favorite'),
-    path('recipes_launch', views.recipes_launch),
+    path('recipes_launch', views.recipes_launch, name='recipes_launch'),
     path('recept1', views.recept1),
-    path('profile1', views.profile1),
+    path('profile1', views.profile1, name='profile1'),
     path('<int:pk>/edit', views.RecipeEdit.as_view(), name='recipe_edit'),
     # path('recipe/<int:recipe_id>/toggle_favorite/', toggle_favorite, name='toggle_favorite'),
     # path('recipe/<int:recipe_id>/add_to_favorites/', views.add_to_favorites, name='add_to_favorites'),
