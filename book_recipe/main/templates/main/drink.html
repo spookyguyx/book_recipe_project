@@ -112,30 +112,32 @@
 	    <div class="container">
 	            <div class="row">
 	                {%for el in recipe%}
-                        {% if el.category == "drink" %}
-                        <div class="col-lg-3 col-sm-6 mb-3">
-                            <div class="recept-card">
-                                <div class="recept-image">
-                                    <a href="{% url 'recipe_detail4' el.id %}"><img src="{{el.image.url}}" alt=""></a>
-                                </div>
-                                <div class="recept-name">
-                                    <h4><a href="#">{{el.title}}</a></h4>
-                                </div>
-                                <div class="recept-bottom-like d-flex justify-content-between">
-                                    <div>
-                                            <div>
-                                                <p>Калорийность: {{el.calories}} ккал</p>
-                                            </div>
+                        {%if el.online == True%}
+                            {% if el.category == "drink" %}
+                            <div class="col-lg-3 col-sm-6 mb-3">
+                                <div class="recept-card">
+                                    <div class="recept-image">
+                                        <a href="{% url 'drink_detail' el.id %}"><img src="{{el.image.url}}" alt=""></a>
                                     </div>
-                                    <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
-          <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
-        </svg></a></div>
+                                    <div class="recept-name">
+                                        <h4><a href="#">{{el.title}}</a></h4>
+                                    </div>
+                                    <div class="recept-bottom-like d-flex justify-content-between">
+                                        <div>
+                                                <div>
+                                                    <p>Калорийность: {{el.calories}} ккал</p>
+                                                </div>
+                                        </div>
+                                        <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+              <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+            </svg></a></div>
+                                    </div>
+
                                 </div>
 
                             </div>
-
-                        </div>
-                        {% endif %}
+                            {% endif %}
+                        {%endif%}
                     {%endfor%}
 
 	            </div>

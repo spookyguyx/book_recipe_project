@@ -18,7 +18,7 @@ class Recipe(models.Model):
     ingredients = models.CharField('Ингредиенты', max_length=300)
     calories = models.IntegerField()
     steps = models.TextField('Шаги приготовления')
-    time_cooking = models.IntegerField(default=0)
+    time_cooking = models.IntegerField(default=40)
     rating = models.IntegerField(default=0)
     category = models.CharField(max_length=9, choices=CATEGORY_CHOICES, default='breakfast')
     online = models.BooleanField(default=False)
