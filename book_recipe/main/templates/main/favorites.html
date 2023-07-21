@@ -80,22 +80,23 @@
                         </button>
                         <div class="collapse navbar-collapse tr-nabar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto align-self-center">
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="breakfast">Завтраки</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="lunch">Обеды</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="dinner">Ужины</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="dessert">Десерты</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="drink">Напитки</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'breakfast' %}">Завтраки</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'lunch' %}">Обеды</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'dinner' %}">Ужины</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'dessert' %}">Десерты</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'drink' %}">Напитки</a></li>
                                 {% if request.user.is_authenticated %}
-                                   <li class="nav-item tr-nav-item"><a class="nav-link" href="recipes_launch">Добавить</a></li>
-                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="favorites">Избранное</a></li>
-                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="profile1">Профиль</a></li>
-                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="logout">Выйти</a></li>
-                                    <li><h5 style="color:#4CAF50; font-weight: bold">{{ user.username }}</h5></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'recipes_launch' %}">Добавить</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'user_favorite' %}">Избранное</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'profile1' %}">Профиль</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'logout' %}">Выйти</a></li>
+                                <li><h5 style="color:#4CAF50; font-weight: bold">{{ user.username }}</h5></li>
                                 {% else %}
-                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="signin">Войти</a></li>
-                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="signup">Регистрация</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'signin' %}">Войти</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'signup' %}">Регистрация</a></li>
                                 {% endif %}
                             </ul>
+                        </div>
                     </nav>
                 </div>
             </div>

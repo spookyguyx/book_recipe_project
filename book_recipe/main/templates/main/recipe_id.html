@@ -81,22 +81,23 @@
                         </button>
                         <div class="collapse navbar-collapse tr-nabar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto align-self-center">
-                               <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/breakfast">Завтраки</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/lunch">Обеды</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/dinner">Ужины</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/dessert">Десерты</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/drink">Напитки</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'breakfast' %}">Завтраки</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'lunch' %}">Обеды</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'dinner' %}">Ужины</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'dessert' %}">Десерты</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'drink' %}">Напитки</a></li>
                                 {% if request.user.is_authenticated %}
-                                     <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/recipes_launch">Добавить</a></li>
-                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/favorites">Избранное</a></li>
-                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/profile1">Профиль</a></li>
-                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/logout">Выйти</a></li>
-                                    <li><h5 style="color:#4CAF50; font-weight: bold">{{ user.username }}</h5></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'recipes_launch' %}">Добавить</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'user_favorite' %}">Избранное</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'profile1' %}">Профиль</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'logout' %}">Выйти</a></li>
+                                <li><h5 style="color:#4CAF50; font-weight: bold">{{ user.username }}</h5></li>
                                 {% else %}
-                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/signin">Войти</a></li>
-                                    <li class="nav-item tr-nav-item"><a class="nav-link" href="http://127.0.0.1:8000/signup">Регистрация</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'signin' %}">Войти</a></li>
+                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'signup' %}">Регистрация</a></li>
                                 {% endif %}
                             </ul>
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -112,9 +113,17 @@
         <div class="col-1"></div>
         <div class="col-10">
           <h2>{{Recipe.title}}</h2>
-          <form action="favorite_recipe">
-            <button class="button-1">Добавить в Избранное<i class="fa fa-bookmark" aria-hidden="true"></i></button>
+            {% if recipe.favorite == True %}
+          <form action="{% url 'favorite_recipe' Recipe.id %}" method="post" name="remove" id="remove">
+              {% csrf_token %}
+            <button type="submit" name="remove" value="{{recipe.id}}" class="button-1">Убрать из избранного<i class="fa fa-bookmark" aria-hidden="true"></i></button>
           </form>
+            {%else%}
+            <form action="{% url 'favorite_recipe' Recipe.id %}" method="post" name="add" id="add">
+              {% csrf_token %}
+            <button type="submit" name="add" value="{{recipe.id}}" class="button-1">Добавить в Избранное<i class="fa fa-bookmark" aria-hidden="true"></i></button>
+          </form>
+            {% endif %}
         </div>
         <div class="col-1"></div>
       </div>

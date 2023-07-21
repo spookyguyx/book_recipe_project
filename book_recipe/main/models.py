@@ -31,6 +31,10 @@ class Recipe(models.Model):
     def get_absolute_url(self):
         return f'/{self.category}/{self.id}'
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+
 
 class Comment(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='comments')
