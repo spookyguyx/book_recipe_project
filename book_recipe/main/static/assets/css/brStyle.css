@@ -670,8 +670,12 @@ svg #cap {
 
 /*****************************Recepts**************************************/
 .recept-card{
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
-	transition: all .3s;
+	/*box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+	transition: all .3s;*/
+	-webkit-box-shadow: 0px 0px 45px -21px rgba(34, 60, 80, 0.19);
+    -moz-box-shadow: 0px 0px 45px -21px rgba(34, 60, 80, 0.19);
+    box-shadow: 0px 0px 45px -21px rgba(34, 60, 80, 0.19);
+    transition: all .3s;
 }
 
 .recept-card:hover{
@@ -682,7 +686,7 @@ svg #cap {
 	align-items: center;
 	justify-content: center;
 	height: 250px;
-	padding: 20px;
+	padding: 20px 20px 0 20px;
 }
 .recept-image img{
 	max-width: 100%;
@@ -699,6 +703,17 @@ svg #cap {
 	padding-bottom: 20px;
 	padding-left: 20px;
 	padding-inline: 20px;
+	-ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -ms-line-clamp: 2;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    display: -webkit-box;
+    display: box;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
 }
 .recept-bottom-like a{
     color: black;
