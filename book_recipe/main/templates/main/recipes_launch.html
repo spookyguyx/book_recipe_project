@@ -26,30 +26,30 @@
                        <div class="recipes_launch">
                             <form method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
-                                {{ form.title }}<br>
-                                {{ form.ingredients }}<br>
-<textarea name="steps" cols="40" rows="10" class="form-control" placeholder="Шаги приготовления" required="" id="id_steps" style="
+                                {{ form.title }}
+                                {{ form.ingredients }}
+                                <textarea name="steps" cols="40" rows="10" class="form-control" placeholder="Шаги приготовления" required="" id="id_steps" style="
     height: 153.6px;
 "></textarea>
-                                <br>
-                                <h6>кКал</h6>{{form.calories}}<br>
-<select name="category" id="id_category" >
-  <option value="---">---</option>
-
-  <option value="breakfast">Завтрак</option>
-
-  <option value="lunch">Обед</option>
-
-  <option value="dinner">Ужин</option>
-
-  <option value="dessert">Десерт</option>
-
-  <option value="drink">Напиток</option>
-
-</select>
-
-
-                                <p>Выбрать фотографию блюда</p>
+                                {{form.calories}}
+                                {{form.time_cooking}}
+                                <!--<h6 class="label_style">Выбрать сложность приготовления:</h6>
+                                <select name="category" id="id_category" class="dropdown-content">
+                                  <option value="---">---</option>
+                                  <option value="breakfast">Легко</option>
+                                  <option value="lunch">Средне</option>
+                                  <option value="dinner">Трудоёмко</option>
+                                </select>-->
+                                <h6 class="label_style">Выбрать категорию:</h6>
+                                <select name="category" id="id_category" class="dropdown-content">
+                                  <option value="---">---</option>
+                                  <option value="breakfast">Завтрак</option>
+                                  <option value="lunch">Обед</option>
+                                  <option value="dinner">Ужин</option>
+                                  <option value="dessert">Десерт</option>
+                                  <option value="drink">Напиток</option>
+                                </select>
+                                <h6 class="label_style">Выбрать фотографию блюда:</h6>
                                 {{form.image}}
 
 

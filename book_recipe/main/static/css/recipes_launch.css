@@ -60,3 +60,26 @@ body {
     transition-duration: 0.4s;
 }
 
+.form-control{
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 15px;
+    background-color: #f8f8f8;
+    margin-bottom: 14px;
+}
+
+.form-control:focus{
+    border: 3px solid #4CAF50;
+}
+.dropdown-content {
+    border: 2px solid #4CAF50;
+    width: 30%;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.label_style{
+    font-size: 18px;
+    color: #6c757d;
+    margin: 0;
+}
