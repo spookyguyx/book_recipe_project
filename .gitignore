@@ -1,0 +1,8 @@
+.idea
+book_recipe/media/
+book_recipe/venv/
+book_recipe/db.sqlite3
+*/*/migrations/
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
