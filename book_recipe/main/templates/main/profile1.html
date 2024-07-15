@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="{% static 'assets/images/logo/favicon.ico" rel="icon">
     <title>Cafe360 - landing page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/fontawesome-all-min.css' %}">
@@ -89,7 +92,6 @@
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'recipes_launch' %}">Добавить</a></li>
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'user_favorite' %}">Избранное</a></li>
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'profile1' %}">Профиль</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'logout' %}">Выйти</a></li>
                                 <li><h5 style="color:#4CAF50; font-weight: bold">{{ user.username }}</h5></li>
                                 {% else %}
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'signin' %}">Войти</a></li>
@@ -106,7 +108,18 @@
 
     <!-- start slider section -->
     <section class="Ut" style="margin-top: 100px;">
-        <h1 class="text-center" >Профиль: </h1> <h1 class="text-center" style="color:#4CAF50">{{user.username}}</h1>
+        <div class="container">
+            <div class="profile">
+                <h1 class="text-center text_title_font">Профиль</h1>
+                <div class="profile_info">
+                    <img src="{% static 'assets/images/footer-images/cook2.png' %}">
+                    <div class="profile_person">
+                        <h3 class="text_title_font">{{user.username}}</h3>
+                        <button type="submit" class="button_3"><a href="{% url 'logout' %}">Выйти из аккаунта</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
        <h1 class="text-center">Мои рецепты</h1>
     </section>
     <section class="recept-card-section">

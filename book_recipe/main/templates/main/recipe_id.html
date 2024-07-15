@@ -90,7 +90,6 @@
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'recipes_launch' %}">Добавить</a></li>
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'user_favorite' %}">Избранное</a></li>
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'profile1' %}">Профиль</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'logout' %}">Выйти</a></li>
                                 <li><h5 style="color:#4CAF50; font-weight: bold">{{ user.username }}</h5></li>
                                 {% else %}
                                 <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'signin' %}">Войти</a></li>
@@ -166,9 +165,8 @@
     <section class="comments">
 
       <h3>Комментарии:</h3>
-
-      <div class="comment">
         {% for comment in comments %}
+      <div class="comment">
         <span class="heading">{{ comment.author }}</span>
         {% if comment.stars == "1" %}
         <span class="fa fa-star checked"></span>
@@ -206,10 +204,10 @@
         <span class="fa fa-star checked"></span>
         {% endif %}
         <p>{{ comment.text }}</p>
-        {% endfor %}
       </div>
+        {% endfor %}
 
-      <h3>Добавить комментарий:</h3>
+      <h3 class="add_comment_title">Добавить комментарий:</h3>
       {% if request.user.is_authenticated %}
           <div class="AddComment">
             <form method="post" enctype="multipart/form-data">
@@ -224,6 +222,7 @@
                     <option value="5">5 звезд</option>
                   </select>
                 </div> -->
+                <label for="select">Оцени:</label>
                 <select name="stars" id="id_stars" class="dropdown-content">
                   <option value="1">1 звезда</option>
                   <option value="2">2 звезды</option>
@@ -232,8 +231,8 @@
                   <option value="5">5 звёзд</option>
                 </select>
                 {{ form.text }}
-                <!-- <textarea name="details" style="width: 100%; height:100px" placeholder="Напишите комментарий" required></textarea> -->
-                <button type="submit" class="button-1">Добавить комментарий</button>
+                <!-- <textarea name="details" style="width: 100%; height:50px" placeholder="Напишите комментарий" required></textarea> -->
+                <button type="submit" class="button-1 button_add_comment">Добавить комментарий</button>
             </form>
           </div>
       {% else %}
@@ -250,45 +249,45 @@
     <!-- END slider section -->
 
     <!-- start specialities section -->
-    <section class="specialities position-relative" id="Recipes">
+    <!--<section class="specialities position-relative" id="Recipes">
         <h2 class="d-none">hidden</h2>
         <div class="shape-image-one">
             <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="the background decorated dotted square image">
         </div>
 
 
-    </section>
+    </section>-->
     <!-- END specialities section -->
 
     <!-- start our item section -->
-    <section class="our-item-section position-relative" id="Packages">
+    <!--<section class="our-item-section position-relative" id="Packages">
         <h2 class="d-none">hidden</h2>
          <div class="shape-image-two">
             <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="the background decorated image">
         </div>
 
-    </section>
+    </section>-->
     <!-- END our item section -->
 
     <!-- start testimonials section -->
-    <section class="testimonials position-relative">
+    <!--<section class="testimonials position-relative">
         <h2 class="d-none">hidden</h2>
          <div class="shape-image-three">
             <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="dotts background image in testiomonial">
         </div>
 
 
-    </section>
+    </section>-->
     <!-- End testimonials section testimonials -->
 
     <!-- start chef section -->
-    <section class="chef-section position-relative" id="About">
+    <!--<section class="chef-section position-relative" id="About">
         <h2 class="d-none">hidden</h2>
         <div class="shape-image-four">
             <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="the background decorated dotted chef square image">
         </div>
 
-    </section>
+    </section>-->
     <!-- END chef section -->
     <!--start email-subscription-->
 
@@ -306,58 +305,12 @@
     <div class="footer-bottom">
         <div class="container position-relative">
             <div class="row">
-                <div class="col-12 col-md-12 col-lg-12">
-                    <div class="footer-menu text-center">
-                        <!--<ul>
-                            <li class="nav-item"><a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">Story</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">Booking</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">Reviews</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">TopFoods</a>
-                            </li>
-                        </ul>-->
-                    </div>
-                 </div>
-            </div>
-            <div class="row">
                 <div class="col-12 col-md-12 col-lg-12 text-center">
                     <div class="footer-logo">
                         <img src="{% static 'assets/images/footer-images/dsadadsdad.png' %}" alt="the logo image | Footer cafe Logo" >
                     </div>
                 </div>
             </div>
-            <!--<div class="row">
-                <div class="col-md-12 footer-icon text-center">
-                  <a class="fb-ic">
-                    <i class="fab fa-facebook-f wow fadeInDown mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                  <a class="tw-ic">
-                    <i class="fab fa-twitter wow fadeInUp mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                  <a class="ins-ic">
-                    <i class="fab fa-instagram wow fadeInDown mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                  <a class="pin-ic">
-                    <i class="fab fa-pinterest wow fadeInUp mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                  <a class="sn-ic">
-                    <i class="fab fa-snapchat wow fadeInDown mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                </div>
-            </div>-->
-
-            <!--<div class="row">
-                <div class="col-md-12">
-                    <div class="footer-copylink text-center"><span><i class="fas fa-copyright"></i> All Rights Reserved by Cafe360 I Made with <i class="fas fa-heart" style="color: #ff0000;"></i>  I 2022</span>
-                    </div>
-                </div>
-            </div>-->
         </div>
     </div>
 </footer>
@@ -379,8 +332,6 @@
                 <video  controls width="727" height="600">
                     <source src="{% static 'assets/videos/productionID-4068787.mp4 type=video/mp4' %}">
                 </video>
-                <!-- iframe video -->
-               <!-- <iframe class="vid" id="yt" width="727" height="600" src="https://www.youtube.com/embed/7oDb-6kHXZo?autoplay=1" allowfullscreen allow="autoplay"></iframe>  -->
             </div>
         </div>
       </div>
