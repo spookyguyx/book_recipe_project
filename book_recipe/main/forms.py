@@ -36,7 +36,7 @@ class RecipeForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ['text']
+        fields = ('text', 'stars')
 
         labels = {
             'text': 'Ваш комментарий'

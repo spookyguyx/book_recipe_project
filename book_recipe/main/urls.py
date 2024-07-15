@@ -8,7 +8,7 @@ urlpatterns = [
     path('favorites/<int:recipe_id>', views.favorite_recipe, name='favorite_recipe'),
     path('favorites/', views.user_favorite, name='user_favorite'),
     path('recipes_launch', views.recipes_launch, name='recipes_launch'),
-    path('recept1', views.recept1),
+    # path('recept1', views.recept1),
     path('profile1', views.profile1, name='profile1'),
     path('<int:pk>/edit', views.RecipeEdit.as_view(), name='recipe_edit'),
     # path('recipe/<int:recipe_id>/toggle_favorite/', toggle_favorite, name='toggle_favorite'),
@@ -23,11 +23,11 @@ urlpatterns = [
     path('drink', views.drink, name='drink'),
 
     # Recipes detailed
-    path('breakfast/<int:pk>', views.RecipeId.as_view(), name='breakfast_detail'),
-    path('lunch/<int:pk>', views.RecipeId.as_view(), name='lunch_detail'),
-    path('dinner/<int:pk>', views.RecipeId.as_view(), name='dinner_detail'),
-    path('dessert/<int:pk>', views.RecipeId.as_view(), name='dessert_detail'),
-    path('drink/<int:pk>', views.RecipeId.as_view(), name='drink_detail'),
+    path('breakfast/<int:pk>', views.recipe_id, name='breakfast_detail'),
+    path('lunch/<int:pk>', views.recipe_id, name='lunch_detail'),
+    path('dinner/<int:pk>', views.recipe_id, name='dinner_detail'),
+    path('dessert/<int:pk>', views.recipe_id, name='dessert_detail'),
+    path('drink/<int:pk>', views.recipe_id, name='drink_detail'),
 
 ]
 

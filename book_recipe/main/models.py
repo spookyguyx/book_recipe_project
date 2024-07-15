@@ -1,6 +1,9 @@
+import uuid
+
 from django.contrib.auth.models import User
 from django.db import models
 from django.contrib.auth import get_user_model
+
 
 
 CATEGORY_CHOICES = (
@@ -9,6 +12,14 @@ CATEGORY_CHOICES = (
     ('dinner', 'DINNER'),
     ('dessert', 'DESSERT'),
     ('drink', 'DRINK'),
+)
+
+STARS_CHOISES = (
+    ('1', "ONE"),
+    ('2', "TWO"),
+    ('3', "THREE"),
+    ('4', "FOUR"),
+    ('5', "FIVE"),
 )
 
 
@@ -42,6 +53,7 @@ class Comment(models.Model):
     text = models.TextField()
     time = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
+    stars = models.CharField(max_length=8, choices=STARS_CHOISES, default=STARS_CHOISES[0])
 
     class Meta:
         ordering = ['-time']

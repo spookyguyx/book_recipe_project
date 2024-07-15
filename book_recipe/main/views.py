@@ -1,11 +1,13 @@
+from typing import Any
+from django.forms import BaseModelForm
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse
-from django.views.generic import DetailView
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
+from django.urls import reverse_lazy
+from django.views.generic import DetailView, CreateView, UpdateView
+from django.contrib.messages.views import SuccessMessageMixin
 
-from .forms import RecipeForm
-from django.views.generic import DetailView, UpdateView
-from .models import Recipe
+from .forms import RecipeForm, CommentForm
+from .models import Recipe, Comment
 
 
 class RecipeEdit(UpdateView):
@@ -70,7 +72,19 @@ def recipes_launch(request):
 
 
 def recept1(request):
-    return render(request, 'main/Recept1.html')
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.user = request.user
+            obj.save()
+            # messages.success(request, _('Спасибо за отзыв!'))
+        else:
+            print("спс")
+            # messages.error(request, _('Пожалуйста войдите в аккаунт'))
+    else:
+        form = CommentForm()
+    return render(request, 'main/Recept1.html', {'form': form})
 
 
 # Ненужное
@@ -135,7 +149,55 @@ class RecipeId(DetailView):
     model = Recipe
     template_name = 'main/recipe_id.html'
     context_object_name = 'Recipe'
+    
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        kwargs["form"] = CommentForm()
+        kwargs["comments"] = Comment.objects.all()
+        return super().get_context_data(**kwargs)
+    
+    def post(self, request, pk):
+        form = CommentForm(request.POST)
+        recipe = get_object_or_404(Recipe, pk=pk)
 
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.recipe = recipe
+            obj.author = self.request.user
+            obj.save()
+            return redirect(f"{recipe.category}_detail", pk)
+        
+        return reverse_lazy(f"{recipe.category}_detail", pk)
+    
+
+def recipe_id(request, pk):
+    recipe_model = Recipe
+    comment_model = Comment
+    comment_form = CommentForm
+    template = 'main/recipe_id.html'
+    context = {}
+
+    if request.method == "GET":
+        context["Recipe"] = get_object_or_404(recipe_model, pk=pk)
+        context["comments"] = comment_model.objects.filter(recipe_id__id=pk)
+        context["form"] = comment_form()
+        return render(request, template, context)
+    
+    if request.method == "POST":
+        form = comment_form(request.POST)
+        recipe = get_object_or_404(recipe_model, pk=pk)
+
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.recipe = recipe
+            obj.author = request.user
+            obj.save()
+            return redirect(f"{recipe.category}_detail", pk)
+    
+    return HttpResponse("Не правильно")
+
+
+
+    
 
 def profile1(request):
     if request.method == 'GET':
@@ -144,3 +206,4 @@ def profile1(request):
             'recipe': recipe,
         }
         return render(request, 'main/profile1.html', data)
+
