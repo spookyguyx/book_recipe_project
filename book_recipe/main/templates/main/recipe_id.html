@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="{% static 'assets/images/logo/favicon.ico" rel="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Cafe360 - landing page</title>
+    <title>Tastebile</title>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/fontawesome-all-min.css' %}">
@@ -15,11 +15,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/Recept1.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/media-query.css' %}">
+    <link rel="stylesheet" href="{%static 'css/lanch.css' %}">
 </head>
 
 <body data-spy="scroll" data-target="#myHeader">
 
-<!-- Preloader -->
 <div class="preloader">
     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35.235 35.235" xml:space="preserve">
         <g>
@@ -54,275 +54,178 @@
         </g>
     </svg>
 </div>
-<!-- Page Wrapper -->
-<div id="wrap">
-    <!-- Start Header -->
-    <header class="header" id="myHeader">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="logo">
-                        <a href="/..">
-                            <img src="{% static 'assets/images/logo/scafdsf.png' %}" class="img-fluid" alt="The cafe360 Logo Image">
-                        </a>
+
+<header>
+    <div class="cont">
+        <div class="header__cont">
+            <div class="header__col">
+                <a href="/.." class="header__logo">
+                    <img src="{% static 'assets/images/logo/header__logo.png' %}">
+                </a>
+            </div>
+            <div class="header__col">
+                <div class="category-block">
+                    <div class="category-block__head">
+                        Категории
+                    </div>
+                    <div class="category-block__body">
+                        <a class="category-nav" href="{% url 'breakfast' %}">Завтраки</a>
+                        <a class="category-nav" href="{% url 'lunch' %}">Обеды</a>
+                        <a class="category-nav" href="{% url 'dinner' %}">Ужины</a>
+                        <a class="category-nav" href="{% url 'dessert' %}">Десерты</a>
+                        <a class="category-nav" href="{% url 'drink' %}">Напитки</a>
                     </div>
                 </div>
-                <div class="col-6 col-md-8 col-lg-10" style="right: 100px">
-                    <!-- Nav -->
-                    <nav class="navbar navbar-expand-lg nabar-own p-0">
-                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon">
-                            <span class="menu_line_1"></span>
-                            <span class="menu_line_2"></span>
-                            <span class="menu_line_3"></span>
-                            </span>
-                        </button>
-                        <div class="collapse navbar-collapse tr-nabar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mr-auto align-self-center">
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'breakfast' %}">Завтраки</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'lunch' %}">Обеды</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'dinner' %}">Ужины</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'dessert' %}">Десерты</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'drink' %}">Напитки</a></li>
-                                {% if request.user.is_authenticated %}
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'recipes_launch' %}">Добавить</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'user_favorite' %}">Избранное</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'profile1' %}">Профиль</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'logout' %}">Выйти</a></li>
-                                <li><h5 style="color:#4CAF50; font-weight: bold">{{ user.username }}</h5></li>
-                                {% else %}
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'signin' %}">Войти</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'signup' %}">Регистрация</a></li>
-                                {% endif %}
-                            </ul>
+            </div>
+            <div class="header__col">
+                {% if request.user.is_authenticated %}
+                    <a class="category-nav" href="{% url 'recipes_launch' %}">Добавить</a>
+                    <a class="category-nav" href="{% url 'user_favorite' %}">Избранное</a>
+                    <a class="category-nav" href="{% url 'profile1' %}">{{ user.username }}</a>
+                    <a class="category-nav" href="{% url 'logout' %}">Выйти</a>
+                {% else %}
+                    <a class="category-nav" href="{% url 'signin' %}">Войти</a>
+                    <a class="category-nav" href="{% url 'signup' %}">Регистрация</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="site">
+    <div class="site-top">
+        <div class="cont">
+            <section class="catalog-item">
+                <div class="catalog-item__top">
+                    <div class="catalog-item__top-desc">
+                        Вкусно и полезно
+                    </div>
+                    <div class="catalog-item__top-favourite">
+                        {% if recipe.favorite == True %}
+                          <form action="{% url 'favorite_recipe' Recipe.id %}" method="post" name="remove" id="remove">
+                              {% csrf_token %}
+                            <button type="submit" name="remove" value="{{recipe.id}}" class="button-my">Убрать из избранного<i class="fa fa-bookmark" aria-hidden="true"></i></button>
+                          </form>
+                            {%else%}
+                            <form action="{% url 'favorite_recipe' Recipe.id %}" method="post" name="add" id="add">
+                              {% csrf_token %}
+                            <button type="submit" name="add" value="{{recipe.id}}" class="button-my">Добавить в Избранное<i class="fa fa-bookmark" aria-hidden="true"></i></button>
+                          </form>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="catalog-item__head">
+                    {{Recipe.title}}
+                </div>
+                <div class="catalog-item__img">
+                    <img src="{{Recipe.image.url}}" alt="">
+                </div>
+                <div class="catalog-item__short-info">
+                    <div class="catalog-item__short-info-col">
+                        <div class="catalog-item__short-info-line">Время приготовления</div>
+                        <div class="catalog-item__short-info-line">{{Recipe.time_cooking}} мин</div>
+                    </div>
+                    <div class="catalog-item__short-info-col">
+                        <div class="catalog-item__short-info-line">Калорийность</div>
+                        <div class="catalog-item__short-info-line">{{Recipe.calories}} кКал</div>
+                    </div>
+                </div>
+                <div class="catalog-item__main">
+                    <div class="catalog-item__main-col">
+                        <div class="catalog-item__main-head">
+                            Способ приготовления
                         </div>
-                    </nav>
+                        <div class="catalog-item__cook">
+                            {{Recipe.steps}}
+                        </div>
+                    </div>
+                    <div class="catalog-item__main-col">
+                        <div class="catalog-item__main-head">
+                            Ингридиенты
+                        </div>
+                        <div class="catalog-item__ingr">
+                            {{Recipe.ingredients}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="requests">
+                <div class="requests__head">
+                    Комментарии
+                </div>
+                <div class="requests__body">
+                    <div class="requests__item">
+                        <div class="requests__item-line">
+                            <div class="requests__name">
+                                Имя пользователя
+                            </div>
+                        </div>
+                        <div class="requests__item-line">
+                            <div class="requests__text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur doloremque hic ipsum itaque reiciendis repellendus sunt vel veritatis? Assumenda aut debitis ducimus iste itaque placeat rem repellat voluptas voluptatibus. Ad aperiam, atque cupiditate ducimus inventore laudantium nesciunt nisi non officia unde! Cum cumque excepturi id ipsam molestiae nemo odio odit omnis provident repellat repudiandae sapiente, soluta tempore totam vitae. Ab ad aliquam animi aut, dicta dolor dolorum est facilis hic illo laboriosam maxime minus neque nihil non nulla odit quae voluptatum? Beatae cum deleniti doloribus eum fugit illum magnam, modi molestias nisi odio officiis quas quidem quis sit ut veniam?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="requests__item">
+                        <div class="requests__item-line">
+                            <div class="requests__name">
+                                Имя пользователя
+                            </div>
+                        </div>
+                        <div class="requests__item-line">
+                            <div class="requests__text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur doloremque hic ipsum itaque reiciendis repellendus sunt vel veritatis? Assumenda aut debitis ducimus iste itaque placeat rem repellat voluptas voluptatibus. Ad aperiam, atque cupiditate ducimus inventore laudantium nesciunt nisi non officia unde! Cum cumque excepturi id ipsam molestiae nemo odio odit omnis provident repellat repudiandae sapiente, soluta tempore totam vitae. Ab ad aliquam animi aut, dicta dolor dolorum est facilis hic illo laboriosam maxime minus neque nihil non nulla odit quae voluptatum? Beatae cum deleniti doloribus eum fugit illum magnam, modi molestias nisi odio officiis quas quidem quis sit ut veniam?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="requests__item">
+                        <div class="requests__item-line">
+                            <div class="requests__name">
+                                Имя пользователя
+                            </div>
+                        </div>
+                        <div class="requests__item-line">
+                            <div class="requests__text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur doloremque hic ipsum itaque reiciendis repellendus sunt vel veritatis? Assumenda aut debitis ducimus iste itaque placeat rem repellat voluptas voluptatibus. Ad aperiam, atque cupiditate ducimus inventore laudantium nesciunt nisi non officia unde! Cum cumque excepturi id ipsam molestiae nemo odio odit omnis provident repellat repudiandae sapiente, soluta tempore totam vitae. Ab ad aliquam animi aut, dicta dolor dolorum est facilis hic illo laboriosam maxime minus neque nihil non nulla odit quae voluptatum? Beatae cum deleniti doloribus eum fugit illum magnam, modi molestias nisi odio officiis quas quidem quis sit ut veniam?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="requests-form">
+                <div class="requests__head">
+                    Комментарии
+                </div>
+                <div class="requests__body">
+                    <form action="comment.php">
+                        <div class="requests__item-line">
+                            <textarea name="details" placeholder="Напишите комментарий" required></textarea>
+                        </div>
+                        <button type="submit" class="">Добавить комментарий</button>
+                    </form>
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+    <div class="site-bottom">
+        <footer>
+            <div class="cont">
+                <div class="footer__cont">
+                    <div class="footer__logo">
+                        <img src="{% static 'assets/images/logo/header__logo.png' %}">
+                    </div>
+                    <div class="footer__copyright">
+                        2024
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <!-- End Header -->
-
-    <!-- start slider section -->
-<!--        <div class="home-slider-image  wow fadeInRight col-xl-5 col-lg-6 col-md-6 col-12 p-0" data-wow-duration="2s" data-wow-delay=".4s">-->
-<div class="container" style="margin-top: 100px;">
-            <section class="namee">
-      <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-          <h2>{{Recipe.title}}</h2>
-            {% if recipe.favorite == True %}
-          <form action="{% url 'favorite_recipe' Recipe.id %}" method="post" name="remove" id="remove">
-              {% csrf_token %}
-            <button type="submit" name="remove" value="{{recipe.id}}" class="button-1">Убрать из избранного<i class="fa fa-bookmark" aria-hidden="true"></i></button>
-          </form>
-            {%else%}
-            <form action="{% url 'favorite_recipe' Recipe.id %}" method="post" name="add" id="add">
-              {% csrf_token %}
-            <button type="submit" name="add" value="{{recipe.id}}" class="button-1">Добавить в Избранное<i class="fa fa-bookmark" aria-hidden="true"></i></button>
-          </form>
-            {% endif %}
-        </div>
-        <div class="col-1"></div>
-      </div>
-    </section>
-    <section class="recept row">
-      <div class="col-lg-6 col-sm-12">
-        <img src="{{Recipe.image.url}}" alt="Лазанья" class="img-fluid img-thumbnail" alt="Responsive image">
-      </div>
-      <div class="col-lg-6 col-sm-12">
-        <div class="ingredients">
-          <p class="text-center h3">Ингредиенты</p>
-          <ul id="Recept">
-            <li class="R">{{Recipe.ingredients}}</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="info">
-      <div class="row">
-        <div class="col-xl-4 col-sm-12">
-          <button class="button-2"><i class="fa fa-clock-o" aria-hidden="true"></i>  Время приготовления: {{Recipe.time_cooking}} мин.</button>
-        </div>
-        <div class="col-xl-4 col-sm-12">
-          <button class="button-2"><i class="fa fa-bolt" aria-hidden="true"></i>  Калорийность: {{Recipe.calories}} кКал</button>
-        </div>
-      </div>
-    </section>
-    <section class="Re">
-      <h3>Приготовление:</h3><br>
-      <p>{{Recipe.steps}}</p><br>
-    </section>
-    <section class="comments">
-      <h3>Комментарии:</h3>
-      <div class="comment">
-        <span class="heading">Имя пользователя</span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      </div>
-      <h3>Добавить комментарий:</h3>
-      <div class="AddComment">
-        <form action="comment.php">
-            <div id="Grade">
-              <label for="select">Оцени:</label>
-              <select name="Grade">
-                <option value="1">1 звезда</option>
-                <option value="2">2 звезды</option>
-                <option value="3">3 звезды</option>
-                <option value="4">4 звезды</option>
-                <option value="5">5 звезд</option>
-              </select>
-            </div>
-            <textarea name="details" style="width: 100%; height:100px" placeholder="Напишите комментарий" required></textarea>
-            <button type="submit" class="button-1">Добавить комментарий</button>
-        </form>
-      </div>
-    </section>
-    <!-- END slider section -->
-
-    <!-- start specialities section -->
-    <section class="specialities position-relative" id="Recipes">
-        <h2 class="d-none">hidden</h2>
-        <div class="shape-image-one">
-            <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="the background decorated dotted square image">
-        </div>
-
-
-    </section>
-    <!-- END specialities section -->
-
-    <!-- start our item section -->
-    <section class="our-item-section position-relative" id="Packages">
-        <h2 class="d-none">hidden</h2>
-         <div class="shape-image-two">
-            <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="the background decorated image">
-        </div>
-
-    </section>
-    <!-- END our item section -->
-
-    <!-- start testimonials section -->
-    <section class="testimonials position-relative">
-        <h2 class="d-none">hidden</h2>
-         <div class="shape-image-three">
-            <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="dotts background image in testiomonial">
-        </div>
-
-
-    </section>
-    <!-- End testimonials section testimonials -->
-
-    <!-- start chef section -->
-    <section class="chef-section position-relative" id="About">
-        <h2 class="d-none">hidden</h2>
-        <div class="shape-image-four">
-            <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="the background decorated dotted chef square image">
-        </div>
-
-    </section>
-    <!-- END chef section -->
-    <!--start email-subscription-->
-
-    <!--END  email-subscription-->
-
-    <!--start download app-->
-    <section class="download-app-section">
-
-    </section>
-    <!--end download app-->
+        </footer>
+    </div>
 </div>
-<!-- Page Wrapper -->
-<!--start footer-->
-<footer class="position-relative wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">
-    <div class="footer-bottom">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-12">
-                    <div class="footer-menu text-center">
-                        <!--<ul>
-                            <li class="nav-item"><a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">Story</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">Booking</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">Reviews</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">TopFoods</a>
-                            </li>
-                        </ul>-->
-                    </div>
-                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-12 text-center">
-                    <div class="footer-logo">
-                        <img src="{% static 'assets/images/footer-images/dsadadsdad.png' %}" alt="the logo image | Footer cafe Logo" >
-                    </div>
-                </div>
-            </div>
-            <!--<div class="row">
-                <div class="col-md-12 footer-icon text-center">
-                  <a class="fb-ic">
-                    <i class="fab fa-facebook-f wow fadeInDown mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                  <a class="tw-ic">
-                    <i class="fab fa-twitter wow fadeInUp mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                  <a class="ins-ic">
-                    <i class="fab fa-instagram wow fadeInDown mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                  <a class="pin-ic">
-                    <i class="fab fa-pinterest wow fadeInUp mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                  <a class="sn-ic">
-                    <i class="fab fa-snapchat wow fadeInDown mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                </div>
-            </div>-->
-
-            <!--<div class="row">
-                <div class="col-md-12">
-                    <div class="footer-copylink text-center"><span><i class="fas fa-copyright"></i> All Rights Reserved by Cafe360 I Made with <i class="fas fa-heart" style="color: #ff0000;"></i>  I 2022</span>
-                    </div>
-                </div>
-            </div>-->
-        </div>
-    </div>
-</footer>
-<!--end footer-->
-
-<span class="scroll-top" data-scroll="up">
-    <i class="fas fa-long-arrow-alt-up"></i>
-</span>
-
-<!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <i class="fas fa-window-close" style=""></i>
-            </button>
-            <div class="modal-body">
-                <!-- video tag  -->
-                <video  controls width="727" height="600">
-                    <source src="{% static 'assets/videos/productionID-4068787.mp4 type=video/mp4' %}">
-                </video>
-                <!-- iframe video -->
-               <!-- <iframe class="vid" id="yt" width="727" height="600" src="https://www.youtube.com/embed/7oDb-6kHXZo?autoplay=1" allowfullscreen allow="autoplay"></iframe>  -->
-            </div>
-        </div>
-      </div>
-    </div>
-<!-- End Modal -->
 
 <script src="{% static 'assets/js/jquery-3.5.1.slim.min.js' %}"></script>
 <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>

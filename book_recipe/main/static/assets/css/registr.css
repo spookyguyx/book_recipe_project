@@ -1,29 +1,36 @@
+* {
+    box-sizing: border-box;
+    font: 400 14px/22px'Josefin Sans', sans-serif;
+}
 body {
     font-family: Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f2f2f2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 h2{
-    font-size: 30px;
+    font-size: 25px;
 }
 #sign {
     font-size:28px
 }
 .container {
-    max-width: 500px;
+    width: 470px;
+    max-width: calc(100% - 20px);
     margin: 0 auto;
-    padding: 30px;
+    padding: 45px 30px;
     background-color: #fff;
-    border-radius: 30px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position:relative;
-    top:50px;
 }
 
 .container h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .form-group {
@@ -33,23 +40,27 @@ h2{
 .form-group label,
 .form-group input {
     display: block;
-    width: 95%;
+    width: 100%;
 }
 
 .form-group label {
-    font-weight: bold;
+    font-weight: normal;
     margin-bottom: 5px;
 }
 
 .form-group input {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    color: #000;
+}
+.form-group input::placeholder {
+    color: #999;
 }
 
 
 .button-1, .button-2{
-    background-color: #4CAF50; /* Green */
+    background-color: #FF642F; /* Green */
     border: none;
     color: white;
     padding: 14px 45px;
@@ -57,13 +68,13 @@ h2{
     text-decoration: none;
     display: block;
     font-size: 16px;
-    border-radius: 15px;
+    border-radius: 5px;
     margin: 0 auto;
-
+    cursor: pointer;
+    transition: .3s;
 }
 
 
 .button-1:hover, .button-2:hover{
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    transition-duration: 0.4s;
+    background-color: #f8825a;
 }

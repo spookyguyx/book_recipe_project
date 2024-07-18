@@ -5,109 +5,125 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Добавление рецептов</title>
+    <title>Tastebile</title>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/media-query.css' %}">
-    <!--<link rel="stylesheet" href="{%static 'css/lanch.css' %}">-->
     <link rel="stylesheet" href="{%static 'css/recipes_launch.css' %}">
+    <link rel="stylesheet" href="{%static 'css/lanch.css' %}">
 </head>
 <body>
 
 
-    <div id="wrap">
 
-        <!-- start slider section -->
-        <!--<section class="home-slider">-->
-        <div class="container1">
-            <h2 id="tu">Добавление рецептов</h2>
-                       <div class="recipes_launch">
-                            <form method="post" enctype="multipart/form-data">
-                                {% csrf_token %}
-                                {{ form.title }}<br>
-                                {{ form.ingredients }}<br>
-<textarea name="steps" cols="40" rows="10" class="form-control" placeholder="Шаги приготовления" required="" id="id_steps" style="
-    height: 153.6px;
-"></textarea>
-                                <br>
-                                <h6>кКал</h6>{{form.calories}}<br>
-<select name="category" id="id_category" >
-  <option value="---">---</option>
-
-  <option value="breakfast">Завтрак</option>
-
-  <option value="lunch">Обед</option>
-
-  <option value="dinner">Ужин</option>
-
-  <option value="dessert">Десерт</option>
-
-  <option value="drink">Напиток</option>
-
-</select>
-
-
-                                <p>Выбрать фотографию блюда</p>
-                                {{form.image}}
-
-
-<!--&lt;!&ndash;                                <p><input type="file" name="photo" multiple accept="image/*,image/jpeg">&ndash;&gt;-->
-<!--                                <button class="btn btn-success" type="submit">Добавить рецепт</button>-->
-                            <button class="button-1"  type="submit">Добавить рецепт</button>
-                            </form>
-                            <form action="/.." target="">
-                                <button class="button-2">На главную</button>
-                            </form>
-                                <!--<button class="button-1"  type="submit" >На главную</button>-->
-                        </div>
+<header>
+    <div class="cont">
+        <div class="header__cont">
+            <div class="header__col">
+                <a href="/.." class="header__logo">
+                    <img src="{% static 'assets/images/logo/header__logo.png' %}">
+                </a>
+            </div>
+            <div class="header__col">
+                <div class="category-block">
+                    <div class="category-block__head">
+                        Категории
+                    </div>
+                    <div class="category-block__body">
+                        <a class="category-nav" href="{% url 'breakfast' %}">Завтраки</a>
+                        <a class="category-nav" href="{% url 'lunch' %}">Обеды</a>
+                        <a class="category-nav" href="{% url 'dinner' %}">Ужины</a>
+                        <a class="category-nav" href="{% url 'dessert' %}">Десерты</a>
+                        <a class="category-nav" href="{% url 'drink' %}">Напитки</a>
                     </div>
                 </div>
             </div>
-            </div>
-        <!--</section>-->
-    <!-- END slider section -->
-
-
-    </div>
-
-<footer class="position-relative wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">
-    <div class="footer-bottom" style="top: 0px;">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-12">
-                    <div class="footer-menu text-center">
-<!--                        <ul>-->
-<!--                            <li class="nav-item"><a class="nav-link" href="Завтраки">Завтраки</a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item"><a class="nav-link" href="Обеды">Обеды</a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item"><a class="nav-link" href="Ужины">Ужины</a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item"><a class="nav-link" href="Десерты">Десерты</a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item"><a class="nav-link" href="Напитки">Напитки</a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item"><a class="nav-link" href="Избранное">Избранное</a>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-                    </div>
-                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-12 text-center">
-                    <div class="footer-logo">
-                        <img src="{% static 'assets/images/footer-images/dsadadsdad.png' %}" alt="the logo image | Footer cafe Logo" >
-                    </div>
-                </div>
+            <div class="header__col">
+                {% if request.user.is_authenticated %}
+                    <a class="category-nav" href="{% url 'recipes_launch' %}">Добавить</a>
+                    <a class="category-nav" href="{% url 'user_favorite' %}">Избранное</a>
+                    <a class="category-nav" href="{% url 'profile1' %}">{{ user.username }}</a>
+                    <a class="category-nav" href="{% url 'logout' %}">Выйти</a>
+                {% else %}
+                    <a class="category-nav" href="{% url 'signin' %}">Войти</a>
+                    <a class="category-nav" href="{% url 'signup' %}">Регистрация</a>
+                {% endif %}
             </div>
         </div>
     </div>
-</footer>
+</header>
 
+<div class="site">
+    <div class="site-top">
+        <div class="cont">
+            <section class="add-recipe">
+                <div class="add-recipe__head">
+                    Добавить новый рецепт
+                </div>
 
+                <form method="post" enctype="multipart/form-data" class="add-recipe__form">
+                    <div class="add-recipe__form-line">
+                        {% csrf_token %}
+                    </div>
+                    <div class="add-recipe__form-line">
+                        <div class="add-recipe__form-desc">Название</div>
+                        {{ form.title }}
+                    </div>
+                    <div class="add-recipe__form-line">
+                        <div class="add-recipe__form-desc">Ингридиенты</div>
+                        {{ form.ingredients }}
+                    </div>
+                    <div class="add-recipe__form-line">
+                        <div class="add-recipe__form-desc">Способ приготовления</div>
+                        <textarea name="steps" cols="40" rows="10" class="form-control" placeholder="Шаги приготовления" required="" id="id_steps" style="
+    height: 153.6px;
+"></textarea>
+                    </div>
+                    <div class="add-recipe__form-line">
+                        <div class="add-recipe__form-desc">Категория</div>
+                        <select name="category" id="id_category" >
+                          <option value="---">---</option>
+                          <option value="breakfast">Завтрак</option>
+                          <option value="lunch">Обед</option>
+                          <option value="dinner">Ужин</option>
+                          <option value="dessert">Десерт</option>
+                          <option value="drink">Напиток</option>
+                        </select>
+                    </div>
+                    <div class="add-recipe__form-line">
+                        <div class="add-recipe__form-desc">Аватарка</div>
+                        {{form.image}}
+                    </div>
+                    <div class="add-recipe__form-line">
+                        <button class="button-my"  type="submit">Добавить рецепт</button>
+                    </div>
+                </form>
 
+                <div class="add-recipe__back">
+                    <form action="/.." target="">
+                        <button class="button-my">На главную</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="site-bottom">
+        <footer>
+            <div class="cont">
+                <div class="footer__cont">
+                    <div class="footer__logo">
+                        <img src="{% static 'assets/images/logo/header__logo.png' %}">
+                    </div>
+                    <div class="footer__copyright">
+                        2024
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
 
 </body>
 </html>

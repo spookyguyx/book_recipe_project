@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="{% static 'assets/images/logo/favicon.ico" rel="icon">
-    <title>Cafe360 - landing page</title>
+    <title>Tastebile</title>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/fontawesome-all-min.css' %}">
@@ -14,11 +14,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/brStyle.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/media-query.css' %}">
+    <link rel="stylesheet" href="{%static 'css/lanch.css' %}">
 </head>
 
 <body data-spy="scroll" data-target="#myHeader">
 
-<!-- Preloader -->
 <div class="preloader">
     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35.235 35.235" xml:space="preserve">
         <g>
@@ -53,239 +53,90 @@
         </g>
     </svg>
 </div>
-<!-- Page Wrapper -->
-<div id="wrap">
-    <!-- Start Header -->
-    <header class="header" id="myHeader">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="logo">
-                        <a href="/..">
-                            <img src="{% static 'assets/images/logo/scafdsf.png' %}" class="img-fluid" alt="The cafe360 Logo Image">
-                        </a>
+
+<header>
+    <div class="cont">
+        <div class="header__cont">
+            <div class="header__col">
+                <a href="/.." class="header__logo">
+                    <img src="{% static 'assets/images/logo/header__logo.png' %}">
+                </a>
+            </div>
+            <div class="header__col">
+                <div class="category-block">
+                    <div class="category-block__head">
+                        Категории
+                    </div>
+                    <div class="category-block__body">
+                        <a class="category-nav" href="{% url 'breakfast' %}">Завтраки</a>
+                        <a class="category-nav" href="{% url 'lunch' %}">Обеды</a>
+                        <a class="category-nav" href="{% url 'dinner' %}">Ужины</a>
+                        <a class="category-nav" href="{% url 'dessert' %}">Десерты</a>
+                        <a class="category-nav" href="{% url 'drink' %}">Напитки</a>
                     </div>
                 </div>
-                <div class="col-6 col-md-8 col-lg-10" style="right: 100px">
-                    <!-- Nav -->
-                    <nav class="navbar navbar-expand-lg nabar-own p-0">
-                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon">
-                            <span class="menu_line_1"></span>
-                            <span class="menu_line_2"></span>
-                            <span class="menu_line_3"></span>
-                            </span>
-                        </button>
-                          <div class="collapse navbar-collapse tr-nabar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mr-auto align-self-center">
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'breakfast' %}">Завтраки</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'lunch' %}">Обеды</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'dinner' %}">Ужины</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'dessert' %}">Десерты</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'drink' %}">Напитки</a></li>
-                                {% if request.user.is_authenticated %}
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'recipes_launch' %}">Добавить</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'user_favorite' %}">Избранное</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'profile1' %}">Профиль</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'logout' %}">Выйти</a></li>
-                                <li><h5 style="color:#4CAF50; font-weight: bold">{{ user.username }}</h5></li>
-                                {% else %}
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'signin' %}">Войти</a></li>
-                                <li class="nav-item tr-nav-item"><a class="nav-link" href="{% url 'signup' %}">Регистрация</a></li>
-                                {% endif %}
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
+            </div>
+            <div class="header__col">
+                {% if request.user.is_authenticated %}
+                    <a class="category-nav" href="{% url 'recipes_launch' %}">Добавить</a>
+                    <a class="category-nav" href="{% url 'user_favorite' %}">Избранное</a>
+                    <a class="category-nav" href="{% url 'profile1' %}">{{ user.username }}</a>
+                    <a class="category-nav" href="{% url 'logout' %}">Выйти</a>
+                {% else %}
+                    <a class="category-nav" href="{% url 'signin' %}">Войти</a>
+                    <a class="category-nav" href="{% url 'signup' %}">Регистрация</a>
+                {% endif %}
             </div>
         </div>
-    </header>
-    <!-- End Header -->
+    </div>
+</header>
 
-    <!-- start slider section -->
-    <section class="Ut" style="margin-top: 120px; margin-bottom: 10px;">
-       <h1 class="text-center">Рецепты напитков</h1>
-    </section>
-    <section class="recept-card">
-	    <div class="container">
-	            <div class="row">
-	                {%for el in recipe%}
+<div class="site">
+    <div class="site-top">
+        <div class="cont">
+            <section class="page-title">
+               Рецепты напитков
+            </section>
+            <section class="list-main">
+                <div class="list-main__list">
+                    {%for el in recipe%}
                         {%if el.online == True%}
                             {% if el.category == "drink" %}
-                            <div class="col-lg-3 col-sm-6 mb-3">
-                                <div class="recept-card">
-                                    <div class="recept-image">
-                                        <a href="{% url 'drink_detail' el.id %}"><img src="{{el.image.url}}" alt=""></a>
-                                    </div>
-                                    <div class="recept-name">
-                                        <h4><a href="#">{{el.title}}</a></h4>
-                                    </div>
-                                    <div class="recept-bottom-like d-flex justify-content-between">
-                                        <div>
-                                                <div>
-                                                    <p>Калорийность: {{el.calories}} ккал</p>
-                                                </div>
+                                <div class="list-main__item">
+                                    <a href="{% url 'breakfast_detail' el.id %}" class="list-main__item-cont">
+                                        <div class="list-main__item-img">
+                                            <div style="background-image: url({{el.image.url}})"></div>
                                         </div>
-                                        <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
-              <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
-            </svg></a></div>
-                                    </div>
-
+                                        <div class="list-main__item-title">
+                                            {{el.title}}
+                                        </div>
+                                        <div class="list-main__item-bottom">
+                                            Калорийность: {{el.calories}} ккал
+                                        </div>
+                                    </a>
                                 </div>
-
-                            </div>
                             {% endif %}
-                        {%endif%}
+                        {% endif %}
                     {%endfor%}
-
-	            </div>
-	        </div>
-    <section>
-
-    </section>
-
-    </section>
-    <!-- END slider section -->
-
-    <!-- start specialities section -->
-    <section class="specialities position-relative" id="Recipes">
-        <h2 class="d-none">hidden</h2>
-        <div class="shape-image-one">
-            <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="the background decorated dotted square image">
+                </div>
+            </section>
         </div>
-
-
-    </section>
-    <!-- END specialities section -->
-
-    <!-- start our item section -->
-    <section class="our-item-section position-relative" id="Packages">
-        <h2 class="d-none">hidden</h2>
-         <div class="shape-image-two">
-            <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="the background decorated image">
-        </div>
-
-    </section>
-    <!-- END our item section -->
-
-    <!-- start testimonials section -->
-    <section class="testimonials position-relative">
-        <h2 class="d-none">hidden</h2>
-         <div class="shape-image-three">
-            <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="dotts background image in testiomonial">
-        </div>
-
-
-    </section>
-    <!-- End testimonials section testimonials -->
-
-    <!-- start chef section -->
-    <section class="chef-section position-relative" id="About">
-        <h2 class="d-none">hidden</h2>
-        <div class="shape-image-four">
-            <img src="{% static 'assets/images/background-shape/dottd-squre.png' %}" class="img-fluid" alt="the background decorated dotted chef square image">
-        </div>
-
-    </section>
-    <!-- END chef section -->
-    <!--start email-subscription-->
-
-    <!--END  email-subscription-->
-
-    <!--start download app-->
-    <section class="download-app-section">
-
-    </section>
-    <!--end download app-->
+    </div>
+    <div class="site-bottom">
+        <footer>
+            <div class="cont">
+                <div class="footer__cont">
+                    <div class="footer__logo">
+                        <img src="{% static 'assets/images/logo/header__logo.png' %}">
+                    </div>
+                    <div class="footer__copyright">
+                        2024
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </div>
-<!-- Page Wrapper -->
-<!--start footer-->
-<footer class="position-relative wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">
-    <div class="footer-bottom">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-12">
-                    <div class="footer-menu text-center">
-                        <!--<ul>
-                            <li class="nav-item"><a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">Story</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">Booking</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">Reviews</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">TopFoods</a>
-                            </li>
-                        </ul>-->
-                    </div>
-                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-12 text-center">
-                    <div class="footer-logo">
-                        <img src="{% static 'assets/images/footer-images/dsadadsdad.png' %}" alt="the logo image | Footer cafe Logo" >
-                    </div>
-                </div>
-            </div>
-            <!--<div class="row">
-                <div class="col-md-12 footer-icon text-center">
-                  <a class="fb-ic">
-                    <i class="fab fa-facebook-f wow fadeInDown mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                  <a class="tw-ic">
-                    <i class="fab fa-twitter wow fadeInUp mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                  <a class="ins-ic">
-                    <i class="fab fa-instagram wow fadeInDown mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                  <a class="pin-ic">
-                    <i class="fab fa-pinterest wow fadeInUp mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                  <a class="sn-ic">
-                    <i class="fab fa-snapchat wow fadeInDown mr-md-5 mr-2" data-wow-duration="1.5s" data-wow-delay=".4s"> </i>
-                  </a>
-                </div>
-            </div>-->
-
-            <!--<div class="row">
-                <div class="col-md-12">
-                    <div class="footer-copylink text-center"><span><i class="fas fa-copyright"></i> All Rights Reserved by Cafe360 I Made with <i class="fas fa-heart" style="color: #ff0000;"></i>  I 2022</span>
-                    </div>
-                </div>
-            </div>-->
-        </div>
-    </div>
-</footer>
-<!--end footer-->
-
-<span class="scroll-top" data-scroll="up">
-    <i class="fas fa-long-arrow-alt-up"></i>
-</span>
-
-<!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <i class="fas fa-window-close" style=""></i>
-            </button>
-            <div class="modal-body">
-                <!-- video tag  -->
-                <video  controls width="727" height="600">
-                    <source src="{% static 'assets/videos/productionID-4068787.mp4 type=video/mp4' %}">
-                </video>
-                <!-- iframe video -->
-               <!-- <iframe class="vid" id="yt" width="727" height="600" src="https://www.youtube.com/embed/7oDb-6kHXZo?autoplay=1" allowfullscreen allow="autoplay"></iframe>  -->
-            </div>
-        </div>
-      </div>
-    </div>
-<!-- End Modal -->
 
 <script src="{% static 'assets/js/jquery-3.5.1.slim.min.js' %}"></script>
 <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
